@@ -1,0 +1,138 @@
+%Template found at https://www.overleaf.com/latex/templates/syllabus-template-course-info/gbqbpcdgvxjs
+
+\documentclass[11pt, a4paper]{article}
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{Course Name} }
+%\chead{ \fancyplain{}{} }
+\rhead{ \fancyplain{}{\today} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+%\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{Probability and Statistics}}
+\end{center}
+\begin{center}
+Summer 2019
+\end{center}
+
+\begin{center}
+\rule{6in}{0.4pt}
+\begin{minipage}[t]{.75\textwidth}
+\begin{tabular}{llcccll}
+\textbf{Instructor:} & Jonathan Adams & & &  & \textbf{Time:} & MTWRF 12:00 -- 12:55 \\
+\textbf{Email:} &  jd.adams16@gmail.com & & & & \textbf{Place:} & Math 11
+\end{tabular}
+\end{minipage}
+\rule{6in}{0.4pt}
+\end{center}
+\vspace{.5cm}
+\setlength{\unitlength}{1in}
+\renewcommand{\arraystretch}{2}
+
+\noindent\textbf{Course Page:} https://github.com/PieceMaker/texprep-probability-and-statistics
+
+\vskip.15in
+\noindent\textbf{Office Hours:} Office hours will not be available for this course. If you have questions, email me or ask Ms. Stamm.
+
+\vskip.15in
+\noindent\textbf{Main Reference:}
+The book that will be used for this course is not required. The information is provided here solely for future reference due to personal interest.
+\begin{itemize}
+\item Dennis D. Wackerly, William Mendenhall III, and Richard L. Scheaffer, {\textit{Mathematical Statistics with Applications}}, Brooks/Cole, 7th ed., 2008.
+\end{itemize}
+
+\vskip.15in
+\noindent\textbf{Objectives:}  The goal of this course is to give a simple introduction to the field of probability and statistics. This will be accomplished by a combination of hands-on experiments with data analysis as well as in-class lecture. Some of the topics include:
+
+\begin{itemize}
+\item Laws of Probability
+\item Counting/Combinatorics
+\item Introduction to Discrete Distributions
+\item Design and Analysis of Experiments
+\end{itemize}
+
+\vspace*{.15in}
+
+\vspace*{.15in}
+\noindent\textbf{Grading Policy:} Homework (30\%), Projects (30\%),  Midterm (20\%), Final (20\%).
+
+\vskip.15in
+\noindent\textbf{Important Dates:}
+\begin{center} \begin{minipage}{3.8in}
+\begin{flushleft}
+Midterm Questions \dotfill June 14 \\
+Midterm      \dotfill June 19  \\
+Final Questions \dotfill June 28 \\
+Final       \dotfill July 3  \\
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+\vskip.15in
+\noindent\textbf{Course Policy:}  
+\begin{itemize}
+\item Regular attendance is essential and expected.
+\item Late work will only be accepted when directed to by the TexPREP office.
+\item No makeup exams will be given unless directed to by the TexPREP office.
+\item You are expected to act in a civil manner toward the teacher, assistant, and fellow students.
+\item Cheating will result in a 0\% for the assignment.
+\end{itemize}
+
+\end{document} 
