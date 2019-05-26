@@ -3,3 +3,5 @@
 *.gz
 *.log
 *.out
+*.pdf
+notes/template.*
