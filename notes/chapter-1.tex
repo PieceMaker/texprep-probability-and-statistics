@@ -44,13 +44,15 @@
 \end{center}
 
 \begin{note}
-	It is assumed that the paper towel experiment/project will have been performed before using these notes.1
+	It is assumed that the paper towel experiment/project will have been performed before using these notes.
 \end{note}
 
 \section{Introduction}
+
+\subsection{What is Statistics?}
 Statistics is the study of techniques for data collection, with the goal of inference from this data.
 
-We wish to make inference about a population based on a sample.
+We wish to make inference about a population based on a sample. We also wish to quantify how good our inference is.
 \begin{itemize}
 	\item Population: the large body of data that is of interest
 	\item Sample: a chosen subset of the population
@@ -74,5 +76,103 @@ Examples of populations and subsequent samples:
 			\item Sample: ask the class.
 		\end{itemize}
 \end{itemize}
+
+Once data has been collected, it must be analyzed for inference to be made. There are two main types of analysis: graphical and numerical.
+
+\subsection{Graphical Analysis}
+
+Graphical methods of analysis consist of visualizing the data in some form. Some types of visualizations are as follows:
+
+\begin{itemize}
+	\item Scatterplots - consist of plotting two variables of data, one on the x-axis and one on the y-axis.
+	\item Histograms - binned data where height of bin represents how common the data in said bin were.
+	\item Correlation Matrix - Takes all pairs of variables and shows the correlation among each pair.
+\end{itemize}
+
+\begin{note}
+	Show samples of these plots in R. Work in actual results from paper towel project.
+\end{note}
+
+\subsection{Numerical Analysis}
+
+Pictures are great for gaining initial insight into the behavior of data and systems, but humans are terrible about seeing patterns when no pattern exists.
+
+\begin{note}
+	Show draw from roulette wheel colors. Ask students to say what color they think will come up next. Ask them to explain why they chose said color. Talk about casinos showing the recent winning and "drought" numbers to entice prospective gamblers to see "patterns" in the results.
+\end{note}
+
+Numerical methods use functions of the data to summarize said data. Summary functions can be anything, such as the mean, median, mode, max, min, etc... The most common summary functions are the mean, the variance, and the standard deviation.
+
+\begin{shaded}
+
+	\textbf{Mean} \newline
+
+	The \textit{mean} of a sample of \textit{n} measured responses $y_1, y_2, \ldots, y_n$ is given by
+
+	$$
+	\bar{y} = \frac{1}{n} \sum_{i=1}^n y_i
+	$$
+
+	The corresponding population mean is denoted by $\mu$.
+
+\end{shaded}
+
+The mean represents the average of the data. You can think of it as "the center of mass of the data."
+
+\begin{shaded}
+
+	\textbf{Variance} \newline
+	
+	The \textit{variance} of a sample of measurements $y_1, y_2, \ldots, y_n$ is the sum of the squre of the differenes between the measurements and their mean, divided by $n-1$.
+	
+	$$
+	s^2 = \frac{1}{n-1} \sum_{i=1}^n (y_i-\bar{y})^2
+	$$
+	
+	The corresponding population variance is denoted by the symbol $\sigma^2$.
+
+\end{shaded}
+
+The variance is a measure of how spread out the data are; it is the average (almost) distance from the mean of each data point.
+
+\begin{note}
+	Ask students why we don't divide by $n$ if  we are interested in an average. The reason is due to the concept of bias, which we will likely not cover in this course. Show them graphically though, using a target and different clusters of points.
+\end{note}
+
+\begin{shaded}
+
+	\textbf{Standard Deviation}
+	
+	The \textit{standard deviation} of a sample of measurements is the positive square root of the variance.
+	
+	$$
+	s = \sqrt{s^2}
+	$$
+	
+	The corresponding population standard deviation is denoted by $\sigma = \sqrt{\sigma^2}$.
+
+\end{shaded}
+
+\begin{note}
+	Ask students why we care about this measurement since it doesn't really seem different from the variance. The answer is in the units: the standard deviation is in the same units as the original data.
+\end{note}
+
+\begin{shaded}
+
+	\textbf{Empirical Rule}
+	
+	For a distribution of measurements that is approximately normal (bell shaped), it follows that the interval with endpoints
+	
+	\hspace{10mm} $\mu \pm \sigma$ contains approximately 68\% of the measurements
+	
+	\hspace{10mm} $\mu \pm 2\sigma$ contains approximately 95\% of the measurements
+	
+	\hspace{10mm} $\mu \pm 3\sigma$ contains approximately 100\% of the measurements
+
+\end{shaded}
+
+\begin{note}
+	Show students visual representation of empirical rule in R.
+\end{note}
 
 \end{document}
