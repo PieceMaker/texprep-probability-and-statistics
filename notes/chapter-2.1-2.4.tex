@@ -1,0 +1,69 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\setcounter{section}{8}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Chapter 2.1-2.4}\\
+{\large Probability \& Statistics}
+\end{center}
+\section{Set Notation Review}
+We rely heavily on sets when trying to calculate probabilities, so we will review some basic set theory.
+
+\begin{note}
+	For the following set notation review, add Venn diagrams and sample sets where useful.
+\end{note}
+
+Capital letters $A, B, C$ will denote sets of points while lower-case letters (likely with subscripts) will denote elements of sets.
+
+$$
+A = \{a_1, a_2, a_3\}
+$$
+
+$S$ will denote the set of all elements under consideration and will be known as the \textit{universal set}.
+
+For two sets $A$ and $B$, if $A$ is contained in $B$, i.e. every point in $A$ is also in $B$, then we say $A$ is a subset of $B$, denoted $A \subset B$.
+
+For two sets $A$ and $B$, we can create the union of the sets, denoted $A \cup B$, as the set containing the unique elements that occur in one or both of sets $A$ and $B$.
+
+\begin{note}
+	Use the following sets for union example: $A = \{1, 2, 3, 3, 4, 6\},  B = \{5, 5, 6, 7, 8, 9, 10\}$.
+\end{note}
+
+\end{document}
