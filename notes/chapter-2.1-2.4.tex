@@ -34,7 +34,6 @@
 \newtheorem{exer}{Exercise}
 \newtheorem{note}{Note}
 \begin{document}
-\setcounter{section}{8}
 \title{Title}
 
 \thispagestyle{empty}
@@ -60,10 +59,120 @@ $S$ will denote the set of all elements under consideration and will be known as
 
 For two sets $A$ and $B$, if $A$ is contained in $B$, i.e. every point in $A$ is also in $B$, then we say $A$ is a subset of $B$, denoted $A \subset B$.
 
-For two sets $A$ and $B$, we can create the union of the sets, denoted $A \cup B$, as the set containing the unique elements that occur in one or both of sets $A$ and $B$.
+For two sets $A$ and $B$, we can create the union of the sets, denoted $A \cup B$, as the set containing the unique elements that occur in one or both of sets $A$ and $B$. In word problems, the union is usually indicated by the word \textit{or}.
+
+For two sets $A$ and $B$, we can create the intersection of the sets, denoted $A \cap B$, as the set containing the unique elements that occur in both $A$ and $B$. In word problems, the intersection is usually indicated by the work \textit{and}.
 
 \begin{note}
-	Use the following sets for union example: $A = \{1, 2, 3, 3, 4, 6\},  B = \{5, 5, 6, 7, 8, 9, 10\}$.
+	Use the following sets for union and intersection example: $A = \{1, 2, 3, 3, 4, 6\},  B = \{5, 5, 6, 7, 8, 9, 10\}, S = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$.
 \end{note}
+
+If $A$ is a subset of $S$, the universal set, then we define the complement of $A$, denoted $A^\complement$, as the set of all elements in $S$ that are not in $A$. A simple but powerful result is that $A \cup A^\complement = S$, i.e. the union of $A$ and its compliment is the universal set.
+
+There are four other useful laws that we will use throughout this course. They are the \textit{distributive laws}:
+
+$$
+\begin{aligned}
+	A \cap (B \cup C) & = (A \cap B) \cup (A \cap C) \\
+	A \cup (B \cap C) & = (A \cup B) \cap (A \cup C)
+\end{aligned}
+$$
+
+\noindent and \textit{DeMorgan's laws}:
+
+$$
+\begin{aligned}
+	(A \cap B)^\complement & = A^\complement \cup B^\complement \\
+	(A \cup B)^\complement & = A^\complement \cap B^\complement
+\end{aligned}
+$$
+
+\section{Discrete Probability Model}
+
+\begin{shaded}
+	An \textit{experiment} is the process by which an observation is made. Each possible outcome is known as an \textit{event}. Events can contain multiple sub-events and are known as \textit{compound events}. The most basic of events--events that cannot be decomposed any further--are known as \textit{simple events} or \textit{sample points}.
+\end{shaded}
+
+Example throwing a fair die. The simple events or sample points are:
+
+\begin{itemize}[label={}]
+	\setlength\itemsep{0em}
+	\item $E_1$: Observe a 1 (simple event/sample point)
+	\item $E_2$: Observe a 2
+	\item $E_3$: Observe a 3
+	\item $E_4$: Observe a 4
+	\item $E_5$: Observe a 5
+	\item $E_6$: Observe a 6
+	\item $A$: Observe an odd number (compound event)
+	\item $B$: Observe an even number
+	\item $C$: Observe a number less than 5
+	\item $D$: Observe a 2 or a 3
+\end{itemize}
+
+The \textit{sample space} ($S$) is made up of all the possible sample points. In the previous example, $S = \{E_1, E_2, E_3, E_4, E_5, E_6\}$.
+
+\begin{note}
+	Draw Venn diagram showing sample space and circled events.
+\end{note}
+
+A more complex example would be an experiment measuring the number of bacteria growing in a Petri dish.
+
+\begin{itemize}[label={}]
+	\setlength\itemsep{0em}
+	\item $E_0$: Observe 0 bacteria
+	\item $E_{64}$: Observe 64 bacteria
+	\item $E_i$: Observe $i$ bacteria, $i \geq 0$
+	\item $A$: Observe more than 200 bacteria
+	\item $B$: Observe between 100 and 300 bacteria
+\end{itemize}
+
+When an experiment is conducted a single time, you will observe one and only one simple event. For example, with the bacteria experiment, if we observe 100 bacteria ($E_{100}$), then we cannot observe 99 bacteria ($E_{99}$) or 101 bacteria ($E_{101}$). Therefore, simple events or sample points are mutually exclusive events.
+
+This finally brings us to the three axioms of probability.
+
+\begin{shaded}
+	Let $S$ be a sample space associated with an experiment. To every event $A$ in $S$, $A \subset S$, we assign a number, $P(A)$, called the \textit{probability} of $A$, so that the following three axioms hold:
+	\begin{itemize}[label={}]
+		\setlength\itemsep{0em}
+		\item Axiom 1: $P(A) \geq 0$
+		\item Axiom 2: $P(S) = 1$
+		\item Axiom 3: If $A_1, A_2, \ldots$ form a sequence of pairwise mutually exclusive events in $S$, i.e. $A_i \cap A_j = \emptyset, i \neq j$, then
+		$$
+			P(A_1 \cup A_2 \cup A_3 \cup \ldots) = \sum_{i=1}^\infty P(A_i)
+		$$
+	\end{itemize}
+\end{shaded}
+
+\subsection{Light Bulb Manufacturing Example}
+
+A manufacturer has five seemingly identical light bulbs available for shipping. Unknown to her, two of the five are defective. A particular order calls for two of the light bulbs is filled by randomly selecting two of the five that are available.
+
+\begin{enumerate}
+	\item List the sample space for this experiment.
+	\item Let $A$ denote the event that the order is filled with two non-defective light bulbs. List the sample points in $A$.
+	\item Construct a Venn diagram for the experiment that illustrates event $A$.
+	\item Assign probabilities to the simple events in such a way that the information about the experiment is used and the axioms are met.
+	\item Find the probability of event $A$.
+\end{enumerate}
+
+\subsubsection*{Solution}
+
+\begin{enumerate}
+	\item Let the two defective light bulbs be labeled $D_1$ and $D_2$ and let the three good light bulbs be labeled $G_1$, $G_2$, and $G_3$. Any single sample point will consist of a list of the two light bulbs selected for shipment. The simple events may be denoted by \\
+	\begin{tabular}{cccc}
+		$E_1 = \{D_1, D_2\}$ & $E_5 = \{D_2, G_1\}$ & $E_8 = \{G_1, G_2\}$ & $E_{10} = \{G_2, G_3\}$  \\
+		$E_2 = \{D_1, G_1\}$ & $E_6 = \{D_2, G_2\}$ & $E_9 = \{G_1, G_3\}$ &  \\
+		$E_3 = \{D_1, G_2\}$ & $E_7 = \{D_2, G_3\}$ &  &  \\
+		$E_4 = \{D_1, G_3\}$ &  &  &  \\
+	\end{tabular} \\
+	Thus, there are ten sample points in $S$, and $S = \{E_1, E_2, \ldots, E_{10}\}$.
+	\item Event $A = \{E_8, E_9, E_{10}\}$.
+	\item Draw diagram on board.
+	\item Because the light bulbs are selected at random, any pair of light bulbs is as likely to be selected as any other pair. Thus, $P(E_i) = \frac{1}{10}$, for $i=1, 2, \ldots, 10$, is a reasonable assignment of probabilities.
+	\item Because $A = E_8 \cup E_9 \cup E_{10}$, Axiom 3 implies that
+	$$
+		P(A) = P(E_8) + P(E_9) + P(E_{10}) = \frac{1}{10} + \frac{1}{10} + \frac{1}{10} = \frac{3}{10}
+	$$
+\end{enumerate}
 
 \end{document}
