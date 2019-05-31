@@ -39,4 +39,4 @@ plotEmpiricalRule <- function(mu, sigma, n = 100, N = 1000000) {
     g
 }
 
-plotEmpiricalRule(100, 10, n = 1000)
+plotEmpiricalRule(100, 10)
