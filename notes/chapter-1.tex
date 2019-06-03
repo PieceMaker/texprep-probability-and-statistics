@@ -182,4 +182,33 @@ The variance is a measure of how spread out the data are; it is the average (alm
 	Show students visual representation of empirical rule in R.
 \end{note}
 
+How can we numerically check to see whether the paper towels were different or not? Well, we apply a form of the empirical rule on $\bar{y}$ and $s$. When trying to determine whether the two are different, we are interested in the "average number of weights" the paper towels will hold so we want to know of the $\mu$ are different between the two.
+
+Remember in the empirical rule example how the larger our sample size got, the closer our $\bar{y}$ and $s$ got to $\mu$ and $\sigma$? Because of this, we use a modified empirical rule when checking if the two means of the paper towels are different. Instead of using $s$, we use $\frac{s}{\sqrt{n}}$ to account for the fact that we get better the more sample points we have.
+
+To check if the two paper towels differ, we calculate the 95\% empirical rule ranges. If they overlap, we assume the two are not different. If they do not overlap, then we assume they are different.
+
+\begin{note}
+	Use the following three sets:
+	$$
+		\begin{aligned}
+			Y_1 = & 102.41, 96.7, 91.21, 100.83, 103.11 \\
+			Y_2 = & 99.46, 102.48, 101.71, 109.41, 106.88 \\
+			\bar{y}_1 = & 98.852 \\
+			\bar{y}_2 = & 103.988 \\
+			s_1 = & 4.943 \\
+			s_2 = & 4.054 \\
+			\frac{s_1}{\sqrt{n}} = & 2.215 \\
+			\frac{s_2}{\sqrt{n}} = & 1.813 \\
+			Y_1: & (94.422, 103.282) \\
+			Y_2: & (100.362, 107.614) \\
+			Y_3 = & 97.33, 95.76, 88.24, 92.71, 88.95 \\
+			\bar{y}_3 = & 92.599 \\
+			s_3 = & 4.023 \\
+			\frac{s_3}{\sqrt{n}} = & 1.800 \\
+			Y_3: & (88.999, 96.199) \\
+		\end{aligned}
+	$$
+\end{note}
+
 \end{document}
