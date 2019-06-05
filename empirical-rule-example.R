@@ -36,7 +36,9 @@ plotEmpiricalRule <- function(mu, sigma, n = 100, N = 1000000) {
         ) +
         theme(plot.title = element_text(hjust = 0.5))
     
-    g
+    return(g)
 }
 
-plotEmpiricalRule(100, 10)
+plotEmpiricalRule(100, 20) # +
+    # xlim(25, 175) +
+    # ylim(0, 0.1)
