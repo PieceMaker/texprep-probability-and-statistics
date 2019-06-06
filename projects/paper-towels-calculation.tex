@@ -1,0 +1,146 @@
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+ 
+\begin{document}
+ 
+\title{Project 1: Paper Towels Part 2}
+\date{}
+
+\maketitle
+
+We have visually analyzed the paper towel data collected on the first day of class, but in order to conclude whether paper towels A differ from paper towels B we must perform a numerical test. As discussed in class, this test will involve applying the empirical rule to calculate intervals and comparing these intervals to make the final conclusion.
+
+As a quick recap, the second interval of the empirical rule states that, if the data are bell-shaped, then approximately 95\% of the data can be found in the interval
+
+$$
+(\mu - 2\sigma, \mu + 2\sigma)
+$$
+
+Since $\mu$ and $\sigma$ are the mean and standard deviation of the \textit{population}, which we do not know, we then use the sample mean ($\bar{y}$) and sample standard deviation ($s$).
+
+$$
+(\bar{y} - 2s, \bar{y} + 2s)
+$$
+
+Finally, we wish to account for the sample size so we use the following interval for our test:
+
+$$
+\left(\bar{y} - 2\frac{s}{\sqrt{n}}, \bar{y} + 2\frac{s}{\sqrt{n}}\right)
+$$
+
+In this part of the project, perform the following tasks:
+
+\begin{enumerate}
+	\item The data collected by the 6 groups is on the back of this sheet. For each group (using only the data collected by that group), use the ``weights" value to calculate $\bar{y}$ and $s$ for paper towel A and $\bar{y}$ and $s$ for paper towel B. You should have two $\bar{y}$'s and $s$'s per group. Round your answers to 3 decimal places.
+	\begin{enumerate}
+		\item For paper towel A in group 5, where the ``weights" value is ``NA", ignore this value and calculate $\bar{y}$ and $s$ with the remaining 4 values. Remember this means $n = 4$.
+	\end{enumerate}
+	\item Assume the data are bell-shaped. For each group and paper towel, use the third interval equation above (the one accounting for sample size) to calculate interval using the $\bar{y}$'s and $s$'s calculated in step 1. Round to 3 decimal places.
+	\item For each group, compare the two paper towel intervals calculated in step 2 and conclude whether the results from that group suggest that paper towels A and B differ or do not differ.
+\end{enumerate}
+
+\textbf{Record your answers to steps 1, 2, and 3 on a separate sheet of paper. This will be what you turn in.}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccc}
+  \hline
+group & trial & towel & weights \\ 
+  \hline
+  1 &   1 & A &  27 \\ 
+    1 &   2 & A &  20 \\ 
+    1 &   3 & A &  16 \\ 
+    1 &   4 & A &  28 \\ 
+    1 &   5 & A &  23 \\ 
+    1 &   1 & B &  16 \\ 
+    1 &   2 & B &  16 \\ 
+    1 &   3 & B &  14 \\ 
+    1 &   4 & B &  14 \\ 
+    1 &   5 & B &  10 \\ 
+    2 &   1 & A &  28 \\ 
+    2 &   2 & A &  28 \\ 
+    2 &   3 & A &  16 \\ 
+    2 &   4 & A &  24 \\ 
+    2 &   5 & A &  27 \\ 
+    2 &   1 & B &  11 \\ 
+    2 &   2 & B &  12 \\ 
+    2 &   3 & B &  12 \\ 
+    2 &   4 & B &   9 \\ 
+    2 &   5 & B &   4 \\ 
+    3 &   1 & A &  14 \\ 
+    3 &   2 & A &   8 \\ 
+    3 &   3 & A &  14 \\ 
+    3 &   4 & A &  14 \\ 
+    3 &   5 & A &  14 \\ 
+    3 &   1 & B &   7 \\ 
+    3 &   2 & B &   5 \\ 
+    3 &   3 & B &   9 \\ 
+    3 &   4 & B &   6 \\ 
+    3 &   5 & B &   6 \\ 
+   \hline
+\end{tabular}
+\quad
+\begin{tabular}{cccc}
+  \hline
+group & trial & towel & weights \\ 
+  \hline
+    4 &   1 & A &  14 \\ 
+    4 &   2 & A &  14 \\ 
+    4 &   3 & A &  14 \\ 
+    4 &   4 & A &  14 \\ 
+    4 &   5 & A &  14 \\ 
+    4 &   1 & B &  14 \\ 
+    4 &   2 & B &  14 \\ 
+    4 &   3 & B &  14 \\ 
+    4 &   4 & B &  14 \\ 
+    4 &   5 & B &  14 \\ 
+    5 &   1 & A &  22 \\ 
+    5 &   2 & A &  28 \\ 
+    5 &   3 & A &  13 \\ 
+    5 &   4 & A &  23 \\ 
+    5 &   5 & A & NA \\ 
+    5 &   1 & B &  14 \\ 
+    5 &   2 & B &  11 \\ 
+    5 &   3 & B &   4 \\ 
+    5 &   4 & B &  11 \\ 
+    5 &   5 & B &   3 \\ 
+    6 &   1 & A &  14 \\ 
+    6 &   2 & A &  14 \\ 
+    6 &   3 & A &  14 \\ 
+    6 &   4 & A &  14 \\ 
+    6 &   5 & A &  14 \\ 
+    6 &   1 & B &  10 \\ 
+    6 &   2 & B &  11 \\ 
+    6 &   3 & B &  13 \\ 
+    6 &   4 & B &  12 \\ 
+    6 &   5 & B &   7 \\ 
+   \hline
+\end{tabular}
+\end{table}
+ 
+\end{document}
