@@ -144,20 +144,19 @@ This finally brings us to the three axioms of probability.
 
 \subsection{Light Bulb Manufacturing Example}
 
-A manufacturer has five seemingly identical light bulbs available for shipping. Unknown to her, two of the five are defective. A particular order calls for two of the light bulbs is filled by randomly selecting two of the five that are available.
+A vehicle manufacturer has five seemingly identical engines available for shipping. Unknown to her, two of the five are defective. A mechanic calls and orders two engines. The order is filled by randomly selecting two of the five engines that are available.
 
 \begin{enumerate}
 	\item List the sample space for this experiment.
-	\item Let $A$ denote the event that the order is filled with two non-defective light bulbs. List the sample points in $A$.
-	\item Construct a Venn diagram for the experiment that illustrates event $A$.
-	\item Assign probabilities to the simple events in such a way that the information about the experiment is used and the axioms are met.
+	\item Let $A$ denote the event that the order is filled with two non-defective engines. List the sample points in $A$.
+	\item Assign probabilities to the simple events in such a way that the information about the experiment is used and the three axioms/rules are met.
 	\item Find the probability of event $A$.
 \end{enumerate}
 
 \subsubsection*{Solution}
 
 \begin{enumerate}
-	\item Let the two defective light bulbs be labeled $D_1$ and $D_2$ and let the three good light bulbs be labeled $G_1$, $G_2$, and $G_3$. Any single sample point will consist of a list of the two light bulbs selected for shipment. The simple events may be denoted by \\
+	\item Let the two defective engines be labeled $D_1$ and $D_2$ and let the three good engines be labeled $G_1$, $G_2$, and $G_3$. Any single sample point will consist of a list of the two engines selected for shipment. The simple events may be denoted by \\
 	\begin{tabular}{cccc}
 		$E_1 = \{D_1, D_2\}$ & $E_5 = \{D_2, G_1\}$ & $E_8 = \{G_1, G_2\}$ & $E_{10} = \{G_2, G_3\}$  \\
 		$E_2 = \{D_1, G_1\}$ & $E_6 = \{D_2, G_2\}$ & $E_9 = \{G_1, G_3\}$ &  \\
@@ -165,10 +164,12 @@ A manufacturer has five seemingly identical light bulbs available for shipping. 
 		$E_4 = \{D_1, G_3\}$ &  &  &  \\
 	\end{tabular} \\
 	Thus, there are ten sample points in $S$, and $S = \{E_1, E_2, \ldots, E_{10}\}$.
+	\begin{note}
+		Talk to the students about why these are the simple events and not each engine. For example, why is $E_1 \cap E_2 = \emptyset$ instead of $\{D_1\}$.
+	\end{note}
 	\item Event $A = \{E_8, E_9, E_{10}\}$.
-	\item Draw diagram on board.
-	\item Because the light bulbs are selected at random, any pair of light bulbs is as likely to be selected as any other pair. Thus, $P(E_i) = \frac{1}{10}$, for $i=1, 2, \ldots, 10$, is a reasonable assignment of probabilities.
-	\item Because $A = E_8 \cup E_9 \cup E_{10}$, Axiom 3 implies that
+	\item Because the engines are selected at random, any pair of engines is as likely to be selected as any other pair. Thus, $P(E_i) = \frac{1}{10}$, for $i=1, 2, \ldots, 10$, is a reasonable assignment of probabilities. This choice of probabilities satisfies axioms 1 and 2.
+	\item Because $A = E_8 \cup E_9 \cup E_{10}$, and each of the simple events is mutually exclusive, Axiom 3 implies that
 	$$
 		P(A) = P(E_8) + P(E_9) + P(E_{10}) = \frac{1}{10} + \frac{1}{10} + \frac{1}{10} = \frac{3}{10}
 	$$
