@@ -142,6 +142,41 @@ This finally brings us to the three axioms of probability.
 	\end{itemize}
 \end{shaded}
 
+\subsection{Applying Axioms}
+
+A sample space consists of five simple events, $E_1$, $E_2$, $E_3$, $E_4$ and $E_5$.
+
+\begin{enumerate}
+	\item If $P(E_1) = P(E_2) = 0.15$, $P(E_3) = 0.4$, and $P(E_4) = 2P(E_5)$, find the probabilities of $E_4$ and $E_5$.
+	\item If $P(E_1) = 3P(E_2) = 0.3$, find the probabilities of the remaining simple events if you know that the remaining simple events are equally probable.
+\end{enumerate}
+
+\subsubsection{Solution}
+
+\begin{enumerate}
+	\item By axioms 2 and 3,
+		$$
+			\begin{aligned}
+				P(S) & = P(E_1) + P(E_2) + P(E_3) + P(E_4) + P(E_5) \\
+				& = 0.15 + 0.15 + 0.4 + P(E_4) + P(E_5) \\
+				& = 0.7 + 2P(E_5) + P(E_5) \\
+				& = 0.7 + 3P(E_5) = 1 \\
+				\therefore P(E_5) & = \frac{0.3}{3} = 0.1 \\
+				\therefore P(E_4) & = 2P(E_5) = 2\cdot0.1 = 0.2
+			\end{aligned}
+		$$
+	\item "The remaining simple events are equally probable" means $P(E_3)=P(E_4)=P(E_5)$. Applying this with axioms 2 and 3,
+		$$
+			\begin{aligned}
+				P(S) & = P(E_1) + P(E_2) + P(E_3) + P(E_4) + P(E_5) \\
+				& = 0.3 + \frac{0.3}{3} + 3P(E_3) \\
+				& = 0.4 + 3P(E_3) = 1 \\
+				\therefore P(E_3) & = \frac{0.6}{3} = 0.2 = P(E_4) = P(E_5)
+			\end{aligned}
+		$$
+	
+\end{enumerate}
+
 \subsection{Light Bulb Manufacturing Example}
 
 A vehicle manufacturer has five seemingly identical engines available for shipping. Unknown to her, two of the five are defective. A mechanic calls and orders two engines. The order is filled by randomly selecting two of the five engines that are available.
