@@ -1,5 +1,6 @@
 % Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
 \documentclass[11pt]{article}
+\usepackage{float}
 \usepackage[utf8]{inputenc}	
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
 \usepackage{multirow,booktabs}
@@ -174,7 +175,6 @@ A sample space consists of five simple events, $E_1$, $E_2$, $E_3$, $E_4$ and $E
 				\therefore P(E_3) & = \frac{0.6}{3} = 0.2 = P(E_4) = P(E_5)
 			\end{aligned}
 		$$
-	
 \end{enumerate}
 
 \subsection{Light Bulb Manufacturing Example}
@@ -208,6 +208,47 @@ A vehicle manufacturer has five seemingly identical engines available for shippi
 	$$
 		P(A) = P(E_8) + P(E_9) + P(E_{10}) = \frac{1}{10} + \frac{1}{10} + \frac{1}{10} = \frac{3}{10}
 	$$
+\end{enumerate}
+
+\section{Eye Glass Example}
+
+A survey classified a large number of adults according to whether they were diagnosed as needing eyeglasses to correct their reading vision and whether they use eyeglasses when reading. The proportions falling into the four resulting categories are given in the following table:
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\hline
+		& \multicolumn{2}{c}{Uses Eyeglasses} \\
+		& \multicolumn{2}{c}{for Reading} \\\cmidrule{2-3}
+		Needs glasses & Yes & No \\\hline
+		Yes & 0.44 & 0.14 \\
+		No & 0.02 & 0.40 \\\hline
+	\end{tabular}
+\end{table}
+
+\noindent If a single adult is selected from the large group, find the probabilities of the following events. The adult
+
+\begin{enumerate}
+	\item $A$: needs glasses.
+	\item $B$: needs glasses but does not use them.
+	\item $C$: uses glasses whether the glasses are needed or not.
+\end{enumerate}
+
+\subsection{Solution}
+
+The simple events are as follows:
+
+\begin{itemize}
+	\item $E_1$: The person needs glasses and uses them for reading. $P(E_1) = 0.44$
+	\item $E_2$: The person needs glasses and does not use them for reading. $P(E_2) = 0.14$
+	\item $E_3$: The person does not need glasses and uses them for reading. $P(E_3) = 0.02$
+	\item $E_4$: The person does not need glasses and does not use them for  reading. $P(E_4) = 0.40$
+\end{itemize}
+
+\begin{enumerate}
+	\item $A = \{E_1, E_2\} \therefore P(A) = P(E_1) + P(E_2) = 0.44 + 0.14 = 0.58$
+	\item $B = E_2 \therefore P(B) = P(E_2) = 0.14$
+	\item $C = \{E_1, E_3\} \therefore P(C) = P(E_1) + P(E_3) = 0.44 + 0.02 = 0.46$
 \end{enumerate}
 
 \end{document}
