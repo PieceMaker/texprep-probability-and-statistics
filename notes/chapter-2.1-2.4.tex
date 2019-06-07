@@ -152,7 +152,7 @@ A sample space consists of five simple events, $E_1$, $E_2$, $E_3$, $E_4$ and $E
 	\item If $P(E_1) = 3P(E_2) = 0.3$, find the probabilities of the remaining simple events if you know that the remaining simple events are equally probable.
 \end{enumerate}
 
-\subsubsection{Solution}
+\subsubsection*{Solution}
 
 \begin{enumerate}
 	\item By axioms 2 and 3,
@@ -210,7 +210,7 @@ A vehicle manufacturer has five seemingly identical engines available for shippi
 	$$
 \end{enumerate}
 
-\section{Eye Glass Example}
+\subsection{Eye Glass Example}
 
 A survey classified a large number of adults according to whether they were diagnosed as needing eyeglasses to correct their reading vision and whether they use eyeglasses when reading. The proportions falling into the four resulting categories are given in the following table:
 
@@ -234,7 +234,7 @@ A survey classified a large number of adults according to whether they were diag
 	\item $C$: uses glasses whether the glasses are needed or not.
 \end{enumerate}
 
-\subsection{Solution}
+\subsubsection*{Solution}
 
 The simple events are as follows:
 
@@ -249,6 +249,33 @@ The simple events are as follows:
 	\item $A = \{E_1, E_2\} \therefore P(A) = P(E_1) + P(E_2) = 0.44 + 0.14 = 0.58$
 	\item $B = E_2 \therefore P(B) = P(E_2) = 0.14$
 	\item $C = \{E_1, E_3\} \therefore P(C) = P(E_1) + P(E_3) = 0.44 + 0.02 = 0.46$
+\end{enumerate}
+
+\subsection{Coin Toss}
+
+A balanced coin is tossed four times. Calculate the probability that at least one toss results in heads.
+
+\subsubsection*{Solution}
+
+\begin{enumerate}
+	\item To start we need to define the sample space.\\
+	\begin{table}[H]
+	\centering
+		\begin{tabular}{ccccc}
+			$E_1 = \{HHHH\}$ & $E_2 = \{HHHT\}$ & $E_6 = \{HHTT\}$ & &  \\
+			& $E_3 = \{HHTH\}$ & $E_7 = \{HTHT\}$ & &  \\
+			& $E_4 = \{HTHH\}$ & $E_8 = \{HTTH\}$ & $E_{12} = \{HTTT\}$ &  \\
+			& $E_5 = \{THHH\}$ & $E_9 = \{THHT\}$ & $E_{13} = \{THTT\}$ &  \\
+			& & $E_{10} = \{THTH\}$ & $E_{14} = \{TTHT\}$ &  \\
+			& & $E_{11} = \{TTHH\}$ & $E_{15} = \{TTTH\}$ & $E_{16} = \{TTTT\}$  \\
+		\end{tabular} \\
+	\end{table}
+	\item Now that we have our sample space, we need to assign probabilities to each event. Since the coin is balanced, we can assume each simple event is equally likely, so $P(E_i) = \frac{1}{16}$.
+	\item It's time to calculate our probability. The event of interest $A$ is
+	$$
+		A = \{E_1, E_2, \ldots, E_{15}\}
+	$$
+	This is a lot of probabilities to add up. But $A^\complement = \{E_{16}\}$ and $A \cup A^\complement = S$. Therefore $1 = P(S) = P(A) + P(A^\complement)$ and $P(A) = 1 - P(A^\complement) = 1 - \frac{1}{16} = \frac{15}{16}$.
 \end{enumerate}
 
 \end{document}
