@@ -1,0 +1,153 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage{float}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Chapter 2.6}\\
+{\large Probability \& Statistics}
+\end{center}
+\section{Counting Techniques}
+
+Last week we talked about sample spaces and how, if you can construct the sample space, then you can determine probabilities of events. However, the coin flipping example showed just how tedious it can be to construct a sample space very single time. Instead, we can use counting techniques to determine the size of a sample space and the number of simple events satisfying any event we wish to calculate the probability of.
+
+Our goal with these techniques is to assume that every simple event in our sample space is equiprobable. If this is the case, then we only need to calculate two numbers for any probability. $N$, the size of the sample space, i.e. the number of simple events in the sample space and, for event of interest $A$, we need to calculate $n_a$, the number of simple events in $A$. If we can calculate these numbers, then we have the probability of our event as $P(A) = \frac{n_a}{N}$.
+
+The first rule will be called the $mn rule$.
+
+\begin{shaded}
+	With $m$ elements $a_1, a_2, \ldots, a_m$ and $n$ elements $b_1, b_2, \ldots, b_n$, it is possible to form $mn = m \cdot n$ pairs containing one element from each group.
+\end{shaded}
+
+\begin{note}
+	Show table with $m$ columns and $n$ rows and show how the formula makes sense visually.
+\end{note}
+
+The prior rule can be extended to any number of sets. For example, if there were a third set containing elements $c_1, c_2, \ldots, c_p$, then there would be $m \cdot n \cdot p$ triples containing one element from each group.
+
+\subsection{Dice Example}
+
+An experiment involves tossing a pair of dice and observing the numbers on the upper faces. Find the number of sample points in $S$, the sample space for the experiment.
+
+\subsubsection*{Solution}
+
+A sample point in this experiment is an ordered pair of numbers representing the value of each die in the roll. We can therefore apply the $mn rule$ to calculate the size of $S$.
+
+For this experiment, $m = n = 6$ because there are six sides (and values) on each die. Therefore the size of $S$ is $N = mn = 6\cdot6 = 36$.
+
+\subsection{Coin Flip Pt. 2}
+
+Think back to the coin flipping problem from last week where we flipped a coin 4 times and observed the result. We calculated the simple events with order mattering and calculated the sample space. There were 16 simple events in the sample space. Do we get the same answer using the $mn rule$?
+
+\subsubsection*{Solution}
+
+Each coin flip has 2 possibilities, a head or a tail. Each flip can be viewed as a separate group. Therefore, we can apply the $mn$ rule with 4 groups and we get
+
+$$
+	N = 2 \cdot 2 \cdot 2 \cdot 2 = 2^4 = 16
+$$
+
+\subsection{Birthday Problem}
+
+Including the teacher and assistant, there are 20 people in this class. Discounting leap years, what is the probability of at least two people having the same birthday?
+
+\subsubsection*{Solution}
+
+We are interested in the event $A$, at least two people have the same birthday. This encompasses 2 people, 3 people, etc. all the way up to all 20 people sharing the same birthday. What is an easier way to calculate this probability? What is $A^\complement$?
+
+Since we are ignoring leap years, there are $1, 2, \ldots, 365$ days to choose from. We will view an observation in this experiment as an ordered sequence of 20 numbers where the first number denotes the birthday of the first person, the second number the birthday of the second person, etc.
+
+In order to calculate the probability, we must first calculate the size of the sample space. Since each experiment views 20 people (groups) and each person has 365 possibilities, then we can apply the $mn$ rule and we get
+
+$$
+	N = 365^{20}
+$$
+
+Now, we need to find the size of $A^\complement$. For this, let us first find the number of days to choose from for each person. We can pick any of the 365 day for the first person. What about for the second person? If we already chose a date and the second person cannot have the same birthday for the event to be in $A^\complement$, there are 364 days to choose from. There are 363 for the third. Continuing on, there are 346 to choose from for the 20th person. Each of these can be viewed as the size of the group for each person. Therefore we can apply the $mn$ rule and get
+
+$$
+	n_a = 365 \cdot 364 \cdot 363 \cdot \ldots \cdot 346
+$$
+
+Therefore,
+
+$$
+	\begin{aligned}
+		P\left(A^\complement\right) & = \frac{n_a}{N} = \frac{365 \cdot 364 \cdot 363 \cdot \ldots \cdot 346}{365^{20}} = 0.5886 \\
+		\therefore P(A) & = 1 - P\left(A^\complement\right) = 0.4114
+	\end{aligned}
+$$
+
+\indent There is a special name for the technique we used to calculate $n_a$ in the previous problem. Before we introduce it, let us first introduce the concept of \textit{factorial}.
+
+\begin{shaded}
+	We define factorial of an integer $n$, denoted $n!$, as
+	$$
+		n! = n \cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 2 \cdot 1
+	$$
+	For convenience, we define
+	$$
+		0! = 1
+	$$
+\end{shaded}
+
+Now that we have the concept of factorial, we introduce \textit{permutation}.
+
+\begin{shaded}
+	An ordered arrangement of $r$ distinct objects is called a \textit{permutation}. The number of ways of ordering $n$ distinct objects taken $r$ at a time will be designated by the symbol $P^n_r$.
+\end{shaded}
+
+Based on the birthday problem, we can calculate the number of permutations as
+
+$$
+	P^n_r = n(n-1)(n-2)\cdots(n-r+1) = \frac{n!}{(n-r)!}
+$$
+
+\subsection{Employee Door Prizes}
+
+A company has 30 employees. A company decides to have a random drawing for 3 prizes. The first name drawn gets \$100, the second name \$50, and the third name \$25. How many sample points are associated with this experiment?
+
+\subsubsection*{Solution}
+
+Because the prizes awarded are different, the number of sample points is the number of ordered arrangements of $r=3$ out of the possible $n=30$ names. Thus, the number of sample points in $S$ is
+
+$$
+	P^{30}_3 = \frac{30!}{27!} = 30 \cdot 29 \cdot 28 = 24360
+$$
+
+\end{document}
