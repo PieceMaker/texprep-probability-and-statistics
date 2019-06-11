@@ -147,7 +147,123 @@ A company has 30 employees. A company decides to have a random drawing for 3 pri
 Because the prizes awarded are different, the number of sample points is the number of ordered arrangements of $r=3$ out of the possible $n=30$ names. Thus, the number of sample points in $S$ is
 
 $$
-	P^{30}_3 = \frac{30!}{27!} = 30 \cdot 29 \cdot 28 = 24360
+	P^{30}_3 = \frac{30!}{(30-3)!} = \frac{30!}{27!} = 30 \cdot 29 \cdot 28 = 24360
+$$
+
+\subsection{Manufacturer Efficiency}
+
+Suppose a manufacturer identifies 4 tasks in the manufacturing process that can be performed in any order. The manufacturer knows that changing the order each of these tasks is performed can change the efficiency of the manufacturing process. How many orderings of these tasks would the manufacturer have to check to find the most efficient process?
+
+\subsubsection*{Solution}
+
+Since the order each task is performed can change the efficiency of the process, we have to check all ordered pairs. The number of such pairs is
+
+$$
+	P^4_4 = \frac{4!}{(4-4)!} = \frac{4!}{0!} = 4! = 24
+$$
+
+\begin{shaded}
+	The number of \textit{combinations} of $n$ objects taken $r$ at a time is the number of subsets, each of size $r$, that can be formed from the $n$ objects. This number will be denoted by $n \choose r$.
+\end{shaded}
+
+The number of combinations is calculated as
+
+$$
+	{n \choose r} = \frac{n!}{r! (n-r)!}
+$$
+
+\subsection{Job Applicants}
+
+Suppose a company is hiring for 4 identical positions and they get 20 applications. How many different ways can these positions be filled?
+
+\subsubsection*{Solution}
+
+In this case, order does not matter because we do not consider hiring person 1  then person 2 to be different from hiring person 2 then person 1. Therefore the number of ways of filling these positions is
+
+$$
+	{20 \choose 4} = \frac{20!}{4!(20-4)!} = \frac{20!}{4!16!} = \frac{20 \cdot 19 \cdot 18 \cdot 17}{4 \cdot 3 \cdot 2 \cdot 1} = 19 \cdot 17 \cdot 5 \cdot  3 = 4845
+$$
+
+\subsection{Engine Problem (ctd.)}
+
+A vehicle manufacturer has five seemingly identical engines available for shipping. Unknown to her, two of the five are defective. A mechanic calls and orders two engines. The order is filled by randomly selecting two of the five engines that are available. What is the probability that the order is filled with two non-defective engines?
+
+\subsubsection*{Solution}
+
+The last time we worked this problem we found there were 10 simple events in the sample space and 3 of them consist of a pair of non-defective engines. Since the order of the engines in the pair does not matter, we can use combinations to calculate this.
+
+For the size of the sample space $N$, there are 5 engines to choose from and we are selecting sets of size 2. Therefore,
+
+$$
+	N = {5 \choose 2} = \frac{5!}{2!(5-2)!} = \frac{5!}{2!3!} = \frac{5*4}{2!} = \frac{20}{2} = 10
+$$
+
+Now, to calculate the size of the event of interest, $n_a$, we realize that we are still selecting sets of size 2, but now we only have 3 engines to choose from because there are only 3 non-defective engines. This gives us
+
+$$
+	n_a = {3 \choose 2} = \frac{3!}{2!(3-2!)} = \frac{3!}{2!1!} = 3
+$$
+
+Using our definition of probability, we have
+
+$$
+	P(A) = \frac{n_a}{N} = \frac{3}{10} = 0.3
+$$
+
+This matches what we calculated last time.
+
+\subsection{Traveling Salesman Problem}
+
+Suppose a salesman wishes to fly to 10 cities in 10 days. The distances between each city is known. The price of each flight changes on each day and the price from city A to B is different than the price from city B to A. The salesman knows all prices. How many distances are there? If the salesman wishes to minimize the cost of the trip, how many routes must be checked?
+
+\subsubsection*{Solution}
+
+The distances do not change and they are the same when considering the distance from city A to B as the distance from B to A. Therefore we are interested in all unordered pairs. This is a combination problem.
+
+$$
+	{10\choose2} = \frac{10!}{2!8!} = \frac{10 \cdot 9}{2} = 45
+$$
+
+Next, since the flight prices change daily and the price from city A to B differs from city B to A, order matters when calculating the price of each journey. Therefore, we have to consider all ordered sets of the 10 cities. The total number of these is
+
+$$
+	P^{10}_{10} = \frac{10!}{(10-10)!} = 10! = 3,628,800
+$$
+
+Counting combinations can be generalized to multiple groups of different sizes, as long as those sizes add to the total number of objects.
+
+\begin{shaded}
+	The number of ways of partitions $n$ distinct objects into $k$ distinct groups containing $n_1, n_2, \ldots, n_k$ objects respectively, where each object appears in exactly one group and $\sum_{i=1}^k n_i = n$ is
+	
+	$$
+		N = {n \choose n_1 n_2 \cdots n_k } = \frac{n!}{n_1!n_2!\cdots n_k!}
+	$$
+\end{shaded}
+
+\subsection{Employment Dispute}
+
+A labor dispute has arisen concerning the assignment of 20 workers to four different construction jobs. The first job (considered to be very undesirable) required 6 workers. The second, third, and fourth required 4, 5, and 4 workers respectively. The dispute arose over an alleged random assignment of the laborers to the jobs that placed all 4 members of a particular ethnic group on job 1, the undesirable job. In considering whether the assignment represented injustice, a mediation panel desired the probability of the observed event.
+
+Determine the number of sample points in the sample space for this experiment, i.e. how many ways 20 people can be assigned to the 4 jobs. Finally, find the probability of the observed event if it is assumed the workers are randomly assigned.
+
+\subsubsection*{Solution}
+
+The number of ways of assigning the 20 workers to the 4 jobs is equal to the number of ways of partitioning 20 workers into 4 groups of sizes $n_1 = 6, n_2 = 4, n_ 3 = n_4 = 5$. This is
+
+$$
+	N = {20 \choose 6 4 5 5} = \frac{20!}{6!4!5!5!}
+$$
+
+Now, the number of sample points resulting in all 4 members of the ethnic group being assigned to job 1 starts out with placing all members on job 1. We then need to count the number of ways the remaining 16 employees can be assigned to the 4 jobs. There are 16 employees to choose from and the remaining spots on job 1 is 2, since we already assigned 4 people to job 1. Therefore
+
+$$
+	n_a = {16 \choose 2 4 5 5} = \frac{16!}{2!4!5!5!}
+$$
+
+We then have
+
+$$
+	P(A) = \frac{n_a}{N} = \frac{\frac{16!}{2!4!5!5!}}{\frac{20!}{6!4!5!5!}} = \frac{16!6!}{20!2!} \approx 0.0031
 $$
 
 \end{document}
