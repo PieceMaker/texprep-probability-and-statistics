@@ -240,6 +240,54 @@ Counting combinations can be generalized to multiple groups of different sizes, 
 	$$
 \end{shaded}
 
+Taking a step back, there is an application of the combination formula used in expanding a polynomial of the form $(x + y)^n$. The following equality holds:
+
+$$
+	(x + y)^n = {n \choose 0} x^n y^0 + {n \choose 1} x^{n-1}y^1 + {n \choose 2} x^{n-2}y^2 + \cdots + {n \choose n} x^0 y^n = \sum_{i=0}^n {n \choose i} x^{n-i}y^i
+$$
+
+\subsection{Polynomial Expansion}
+
+Expand the polynomial $(x + y)^3$ by hand and using the previous formula.
+
+\subsubsection*{Solution}
+
+\begin{enumerate}
+	\item
+		$$
+			\begin{aligned}
+				(x + y)^3 & = (x^2 + 2xy + y^2)(x + y) \\
+				& = x^3 + 2x^2y + xy^2 + x^2y + 2xy^2 + y^3 \\
+				& = x^3 + 3x^2y + 3xy^2 + y^3
+			\end{aligned}
+		$$
+	\item
+		$$
+			\begin{aligned}
+				(x + y)^3 & = \sum_{i=0}^3 {3 \choose i} x^{3-i}y^i \\
+				& = {3 \choose 0} x^3y^0 + {3 \choose 1} x^2y^1 + {3 \choose 2} x^1y^2 + {3 \choose 3} x^0y^3 \\
+				& = x^3 + 3x^2y + 3xy^2 + y^3
+			\end{aligned}
+		$$
+\end{enumerate}
+
+This is also used to create Pascal's Triangle.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{>{$n=}l<{$\hspace{12pt}}*{13}{c}}	
+		0 &&&&&&&1&&&&&&\\
+		1 &&&&&&1&&1&&&&&\\
+		2 &&&&&1&&2&&1&&&&\\
+		3 &&&&1&&3&&3&&1&&&\\
+		4 &&&1&&4&&6&&4&&1&&\\
+		5 &&1&&5&&10&&10&&5&&1&\\
+		6 &1&&6&&15&&20&&15&&6&&1
+	\end{tabular}
+\end{table}
+
+Each row makes up all the possible numbers of combinations for the given $n$. Notice that each column in a row is made up by summing the adjacent columns on the previous row. This is a quick way of determining the numbers of combinations.
+
 \subsection{Employment Dispute}
 
 A labor dispute has arisen concerning the assignment of 20 workers to four different construction jobs. The first job (considered to be very undesirable) required 6 workers. The second, third, and fourth required 4, 5, and 4 workers respectively. The dispute arose over an alleged random assignment of the laborers to the jobs that placed all 4 members of a particular ethnic group on job 1, the undesirable job. In considering whether the assignment represented injustice, a mediation panel desired the probability of the observed event.
@@ -265,5 +313,85 @@ We then have
 $$
 	P(A) = \frac{n_a}{N} = \frac{\frac{16!}{2!4!5!5!}}{\frac{20!}{6!4!5!5!}} = \frac{16!6!}{20!2!} \approx 0.0031
 $$
+
+\subsection{Dice Tossing Example}
+
+An experiment consists of tossing a pair of dice.
+
+\begin{enumerate}
+	\item Use the counting techniques to determine the number of sample points in the sample space $S$.
+	\item Find the probability that the sum of the numbers appearing on the dice is equal to 7.
+\end{enumerate}
+
+\subsubsection*{Solution}
+
+\begin{enumerate}
+	\item In this problem we want every sample point to be equally probable. If order didn't matter, then we would only calculate one sample point for ${1, 2}$. However, there are 2 ways this can occur while there is only 1 way that ${1, 1}$ can occur. Therefore, we cannot assign equal probabilities to these and we must assume order matters. Therefore, we apply the $mn$ rule and get
+	$$
+		N = 6 \cdot 6 = 36	
+	$$
+	\item The numbers in an observed pair are dependent on each other in order to satisfy the requirement that the sum of the dice is 7. For example, if the first die is a 4, then the second die \textit{must} be a 3. This is not an application of permutations or combinations and a direct application of the $mn$ rule is not readily apparent. Therefore we have to get creative.
+	
+	7 is an odd number so it will always be made of separate numbers on each die. Therefore we do not count snake eyes etc. which would only be counted once. Therefore, for each pair of numbers we see we have to add 2 to $n_a$ since the flipped order pair must also be counted. The pairs satisfying the event of interest are {1,6}, {2,5}, and {3,4}. There are 3 of these, but we have to double them. Therefore there are 6 possible ways of rolling two die summing to 7 and we have the probability of the event as
+	
+	$$
+		P(A) = \frac{n_a}{N} = \frac{6}{36} = \frac{1}{6}
+	$$
+\end{enumerate}
+
+\subsection{Telephone Numbers}
+
+How many different seven-digit telephone numbers can be formed if the first digit cannot be 0?
+
+\subsubsection*{Solution}
+
+Each digit can be viewed as a separate group. The first group has 9 to choose from, the remaining groups have 10 to choose from. Application of the expanded $mn$ rule gives us
+
+$$
+	N = 9 \cdot 10^6
+$$
+
+\subsection{Raffle Tickets}
+
+A local sorority is conducting a raffle where 50 tickets are to be sold--one per customer. There are three prizes to be awarded. If there are four organizers of the raffle and they each buy one ticket, what is the probability of the following events:
+
+\begin{enumerate}
+	\item The organizers win all of the prizes.
+	\item The organizers win exactly 2 of the prizes.
+	\item The organizers win exactly 1 of the prizes.
+	\item The organizers win none of the prizes.
+\end{enumerate}
+
+\subsubsection*{Solution}
+
+Our sample space does not change so we use the same $N$ in calculating all 4 of these probabilities. Notice that the probabilities do not care who wins which prize, just that specific people win \textit{a} prize. Therefore order does not matter and we calculate $N$ using combinations:
+
+$$
+	N = {50 \choose 3} = \frac{50!}{3!47!} = \frac{50\cdot49\cdot48}{3\cdot2\cdot1} = 19600
+$$
+
+\begin{enumerate}
+	\item Call this event $A$. If the organizers win all the prizes, then there are 4 people who can win and we are interested in sets of 3 of them.
+	$$
+		n_a = {4 \choose 3} = \frac{4!}{3!1!} = 4 \\
+		\therefore P(A) = \frac{4}{19600} = 0.0002040816
+	$$
+	\item Call this event $B$. If the organizers win exactly 2 prizes, then we want all sets that contain 2 organizers and 1 of the 46 non-organizers. In this case,
+	$$
+		n_b = {4 \choose 2} {46 \choose 1} = \frac{4!}{2!2!} \cdot \frac{46!}{1!45!} = 6 \cdot 46 = 276 \\
+		\therefore P(B) =  \frac{276}{19600} = 0.01408163
+	$$
+	Note, we multiply these two sets of combinations due to the $mn$ rule.
+	\item Call this event $C$. Similar to part (2), we calculate $n_c$ as
+	$$
+		n_c = {4 \choose 1} {46 \choose 2} = \frac{4!}{1!3!} \cdot \frac{46!}{2!44!} = 4 \cdot 1035 = 4140 \\
+		\therefore P(C) =  \frac{4140}{19600} = 0.2112245
+	$$
+	\item Call this event $D$. We only consider non-organizers, so
+	$$
+		n_d = {46 \choose 3} = \frac{46!}{3!45!} = \frac{46 \cdot 45 \cdot 44}{3 \cdot 2 \cdot 1} = 15180 \\
+		\therefore P(C) =  \frac{15180}{19600} = 0.7744898
+	$$
+\end{enumerate}
 
 \end{document}
