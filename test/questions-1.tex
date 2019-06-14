@@ -1,0 +1,115 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Test 1 Questions} \\
+{\large Probability \& Statistics} \\
+\end{center}
+\section*{Question 1}
+
+An experiment results in the following 5 observations: 11.43,  9.89,  9.38, 10.79, 11.25
+
+\begin{enumerate}
+	\item Calculate the sample mean, $\bar{y}$.
+	\item Calculate the sample variance, $s^2$.
+	\item Calculate the sample standard deviation, $s$.
+	\item Assuming the data are bell-shaped, determine an interval containing approximately 95\% of the data.
+\end{enumerate}
+
+\section*{Question 2}
+
+A researcher wishes to compare two brands of light bulbs, brand $A$ and brand $B$, and determine if there is a difference between the two. The variable of interest is number of hours until the light bulb burns out.
+
+5 bulbs from each brand are left on until they burn out and the time at which each burns out is recorded. The following times (in hours) are observed:
+
+$$
+	\begin{aligned}
+		A: & \{1022.31, 1007.17, 1014.14, 1006.64, 1003.30\} \\
+		B: & \{993.29,  997.31, 1014.33, 1002.55, 1017.21\}
+	\end{aligned}
+$$
+
+Assuming the data are bell-shaped, determine numerically if one light bulb is better than the other.
+
+\newpage
+
+\section*{Question 3}
+
+A researcher wishes to determine what types of vehicles driving-aged adults in the US own, e.g. sedans, SUVs, pickups, sports cars, etc. The results of this study will be sold to vehicle manufacturers so they can determine what vehicles to make and in what proportions.
+
+\begin{enumerate}
+	\item What is the population in this study?
+	\item List 5 possible samples for this experiment.
+	\begin{itemize}
+		\item Remember that the sample should cover the entire population.
+		\item If you believe different groups prefer different types of vehicles, make sure you cover each group separately.
+		\item Remember to add randomness once you have specified groups that should be considered.
+		\item Reiterating the first bullet, ensure the groups you specify for the sample cover the entire sample space.
+	\end{itemize}
+\end{enumerate}
+
+\section*{Question 4}
+
+State the three rules/axioms of probability.
+
+\section*{Question 5}
+
+If we wish to expand $(x + y)^8$, what is the coefficient of $x^6y^2$?
+
+\section*{Question 6}
+
+A business office orders paper supplies from one of four vendors: $V_1$, $V_2$, $V_3$, or $V_4$. Orders are to be placed on two successive days, one order per day. Thus, $(V_2, V_3)$ might denote that vendor $V_2$ gets the order on the first day and vendor $V_3$ gets the order on the second day.
+
+\begin{enumerate}
+	\item List the sample points in this experiment of ordering paper on two successive days.
+	\item Assume the vendors are selected at random each day and assign a probability to each sample point.
+	\item Let $A$ denote the event that the same vendor gets both orders and $B$ the event that $V_2$ gets at least one order. Find $P(A)$, $P(B)$, $P(A \cup B)$, and $P(A \cap B)$ by summing the probabilities of the sample points in these events.
+\end{enumerate}
+
+\section*{Question 7}
+
+A manufacturer has fifteen motors in stock, three of which are defective. The manufacturer receives three separate orders for five engines per order. If the engines are randomly assigned to each order, what is the probability that all three defective engines are assigned to the first order?
+
+\section*{Question 8}
+
+The 10-member Human Relations Advisory Board of Gainsville, Florida, considered the complaint of a woman who claimed discrimination, based on sex, on the part of a local company. The board, composed of 7 women and 3 men, voted 7 to 3 in favor of the plaintiff, the 7 women voting in favor of the plaintiff and the 3 men against. The attorney representing the company appealed the board's decision by claiming sex bias on the part of the board members. If there was no sex bias among the board members, it might be reasonable to conjecture that any group of 7 board members would be as likely to vote for the complainant as any other group of 7. If this were the case, show that the probability that the vote would split along sex lines is $\frac{1}{120}$.
+
+\end{document}
