@@ -1,0 +1,194 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Chapter 3.2-3.3}\\
+{\large Probability \& Statistics}
+\end{center}
+
+\section{Discrete Random Variables}
+
+So far in class we have talked about many different types of variables. There were the number of weights in the paper towel problem, the temperatures of healthy adults in the United States, numbers of defective engines shipped to a customer, number of ways of obtaining a straight in poker, etc. Each of these variables falls into one of two categories: continuous and discrete.
+
+Discrete variables are those that are finite or can be counted. In the case of the defective engines, there were exactly 3 possibilities for the variable measuring the number of defective engines shipped: 0, 1, and 2. This is a finite set. For the paper towel example, there are infinitely many values for the number of weights the towel can hold before tearing. It could hold 0, 1, 2, 10, 100, 1000, 10000, etc. High values may be improbable, but there are still infinitely many possible values for this variable.
+
+On the other hand, continuous random variables have infinitely many possibilities and they cannot be counted for whatever interval is chosen, there are always infinitely many possibilities in that interval. Consider the temperature study. 98 and 99 are possible values, but so are 98.5 and 98.6. But wait, there are more values in between those. There's 98.51 and 98.59. Then 98.511 and 98.589. We can go on forever, and this doesn't even consider temperatures below 98 and above 99. This is a continuous random variable.
+
+\subsection{Discrete Probability Distributions}
+
+Reiterating previously used notation, capital letters will represent the variable of interest, known as  random variable, and lower case letters will represent a realization of that variable. For example, in the paper towel weight case, $W$ would represent the random variable and 10 would be an $w$, a realization or observed value of $W$.
+
+We denote the probability of a variable $Y$ having the value $y$ as $P(Y=y)$. This is what we have been calculating in all of our examples and we have been calculating them by summing the probabilities of all events resulting in $y$ for the variable. A shorthand notation for this probability will be $p(y)$.
+
+When analyzing variables, we are not always just interested in a single probability, but rather the probability of every possible value of the variable of interest $Y$. These values can be summarized in multiple ways: formula, table, or graph. All of these summaries are referred to as the probability distribution.
+
+\subsection{Worker Assignment}
+
+A supervisor in a manufacturing plant has three men and three women working for him. He wants to choose two workers for a special job. Not wishing to show any biases in his selection, he decides to select the two workers at random. Let $W$ denote the number of women in his selection. Find the probability distribution for $W$.
+
+\subsubsection*{Solution}
+
+
+We begin this problem just like we did the past counting problems.
+
+We have $N = {6 \choose 2} = 15$. Since we want the probability distribution, we need to know the probability of each possible value of $W$. Since there are three women and two workers will be chosen, the possible values for $W$ are 0, 1, and 2.
+
+$$
+	\begin{aligned}
+		p(0) & = P(W = 0) & = \frac{{3 \choose 0}{3 \choose 2}}{15} & = \frac{3}{15} & = \frac{1}{5} \\
+		p(1) & = P(W = 1) & = \frac{{3 \choose 1}{3 \choose 1}}{15} & = \frac{9}{15} & = \frac{3}{5} \\
+		p(2) & = P(W = 2) & = \frac{{3 \choose 2}{3 \choose 0}}{15} & = \frac{3}{15} & = \frac{1}{5}
+	\end{aligned}
+$$
+
+This can be summarized in table format:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		w & $p(w)$ \\
+		\hline
+		0 & 1/5 \\
+		1 & 3/5 \\
+		2 & 1/5 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent or in formula format:
+
+$$
+	p(w) = \frac{{3 \choose w}{3 \choose 2-w}}{{6 \choose 2}}, w = 0, 1, 2
+$$
+
+\noindent or in graphical format.
+
+\begin{note}
+	Draw a bar graph representing the probability distribution with $w$ on the x-axis and $p(w)$ on the y-axis.
+\end{note}
+
+\subsection{Raffle Tickets Ctd.}
+
+When we worked the raffle ticket problem, we were interested in the number of organizers winning a raffle prize. Let this variable be $Y$. Remember there were four organizers and three prizes, so the possible values of $y$ are 0, 1, 2, and 3. We calculated all of these probabilities, so the probability distribution can be written as follows:
+
+$$
+	\begin{aligned}
+		p(0) & = P(Y = 0) & = \frac{4}{19600} \\
+		p(1) & = P(Y = 1) & = \frac{276}{19600} \\
+		p(2) & = P(Y = 2) & = \frac{4140}{19600} \\
+		p(3) & = P(Y = 3) & = \frac{15180}{19600} \\
+	\end{aligned}
+$$
+
+So the probability distribution can be written as
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		y & $p(y)$ \\
+		\hline
+		0 & 4/19600 \\
+		1 & 276/19600 \\
+		2 & 4140/19600 \\
+		3 & 15180/19600 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent Via formula, we have
+
+$$
+	p(y) = \frac{{4 \choose y}{4 \choose 3-y}}{19600}, y=0, 1, 2, 3
+$$
+
+\section{Functions of Random Variables}
+
+A major part about statistics is summarizing the data that has been collected. You may remember this is what we did in the paper towel example when we calculated the mean and standard deviation to determine the center and spread of our data. When we have a probability distribution, we can use these to summarize the data in the same way. The first and most prominent summary is known as the expected value.
+
+\begin{shaded}
+	Let $Y$ be a discrete random variable with the probability distribution function $p(y)$. Then the \textit{expected value} of $Y$, $E[Y]$, is defined to be
+	$$
+		E[Y] = \sum_y yp(y)
+	$$
+\end{shaded}
+
+\subsection{Worker Assignment Expected Value}
+
+Use the probability distribution calculated in the worker assignment example to determine $E[W]$.
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		E[W] & = \sum_w wp(w) \\
+		& = 0 \cdot p(0) + 1 \cdot p(1) + 2 \cdot p(2) \\
+		& = 0 \cdot \frac{1}{5} + 1 \cdot \frac{3}{5} + 2 \cdot \frac{1}{5} \\
+		& = \frac{0 + 3 + 2}{5} \\
+		& = 1
+	\end{aligned}
+$$
+
+This is interpreted as one woman is expected to be assigned to the job.
+
+\subsection{Raffle Ticket Expected Value}
+
+Use the probability distribution calculated in the raffle ticket example to determine $E[Y]$.
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		E[Y] & = \sum_y yp(y) \\
+		& = 0 \cdot p(0) + 1 \cdot p(1) + 2 \cdot p(2) + 3 \cdot p(3) \\
+		& = 0 \cdot \frac{4}{19600} + 1 \cdot \frac{276}{19600} + 2 \cdot \frac{4140}{19600} + 3 \cdot \frac{15180}{19600} \\
+		& = \frac{0 + 276 + 8280 + 45540}{19600} \\
+		& = \frac{54096}{19600} \\
+		& = 2.76
+	\end{aligned}
+$$
+
+This is interpreted as 2.76 organizers are expected to win the raffle.
+
+\begin{note}
+	Ask them what they notice about the expected value calculation. Guide them to showing that it's the weighted average. It's the mean of the given random variable.
+\end{note}
+
+\end{document}
