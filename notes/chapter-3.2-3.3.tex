@@ -191,4 +191,104 @@ This is interpreted as 2.76 organizers are expected to win the raffle.
 	Ask them what they notice about the expected value calculation. Guide them to showing that it's the weighted average. It's the mean of the given random variable.
 \end{note}
 
+If $p(y)$ is an accurate characterization of the population frequency distribution, then $E[Y]=\mu$, the population mean.
+
+We can take the expected value of functions of our data. For this we have:
+
+\begin{shaded}
+	Let $Y$ be a discrete random variable with probability function $p(y)$ and $g(Y)$ a real-valued function of $Y$. Then the expected value of $g(Y)$ is given by
+	$$
+		E[g(Y)] = \sum_y g(y)p(y)
+	$$
+\end{shaded}
+
+\subsection{Worker Assignment Expected Value ctd.}
+
+Use the probability distribution calculated in the worker assignment example to determine $E[W^2]$.
+
+$$
+	\begin{aligned}
+		E[W^2] & = \sum_w w^2p(w) \\
+		& = 0 \cdot p(0) + 1 \cdot p(1) + 4 \cdot p(2) \\
+		& = 0 \cdot \frac{1}{5} + 1 \cdot \frac{3}{5} + 4 \cdot \frac{1}{5} \\
+		& = \frac{0 + 3 + 4}{5} \\
+		& = \frac{7}{5}
+	\end{aligned}
+$$
+
+\subsection{Raffle Ticket Expected Value ctd.}
+
+Use the probability distribution calculated in the raffle ticket example to determine $E[Y^2]$.
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		E[Y] & = \sum_y yp(y) \\
+		& = 0 \cdot p(0) + 1 \cdot p(1) + 4 \cdot p(2) + 9 \cdot p(3) \\
+		& = 0 \cdot \frac{4}{19600} + 1 \cdot \frac{276}{19600} + 4 \cdot \frac{4140}{19600} + 9 \cdot \frac{15180}{19600} \\
+		& = \frac{0 + 276 + 16560 + 136620}{19600} \\
+		& = \frac{153456}{19600} \\
+		& = 7.829388
+	\end{aligned}
+$$
+
+At the beginning of this semester, we talked about the concept of variance and how it measured the spread of our data, specifically the average distance from each data point to the mean. We can now define the variance as an expected value.
+
+\begin{shaded}
+	If $Y$ is a random variable with mean $E[Y]=\mu$, the variance of a random variable $Y$ is defined to be the expected value of the function $(Y-\mu)^2$. That is,
+	$$
+		V[Y] = E[(Y-\mu)^2]
+	$$
+	The standard deviation is defined as $\sqrt{V[Y]}$.
+\end{shaded}
+
+Again, if $p(y)$ is an accurate characterization of the population frequency distribution, then $V[Y]=\sigma^2$, the population variance.
+
+\subsection{Variance Calculation}
+
+The probability distribution for a random variable $Y$ is given in the below table. Find the mean, variance, and standard deviation of $Y$.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		y & p(y) \\
+		\hline
+		0 & 1/8 \\
+		1 & 1/4 \\
+		2 & 3/8 \\
+		3 & 1/4 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		\mu & = E[Y] = \sum_{y=0}^3 yp(y) = 0 \cdot \frac{1}{8} + 1 \cdot \frac{1}{4} + 2 \cdot \frac{3}{8} + 3 \cdot \frac{1}{4} = 1.75 \\
+		\sigma^2 & = E[(Y-\mu)^2] = \sum_{y=0}^3 (y-\mu)^2p(y) \\
+		& = (0 - 1.75)^2 \cdot \frac{1}{8} + (1 - 1.75)^2 \cdot \frac{1}{4} + (2 - 1.75)^2 \cdot \frac{3}{8} + (3 - 1.75)^2 \cdot \frac{1}{4} \\
+		& = 0.9375 \\
+		\sigma & = \sqrt{\sigma^2} = \sqrt{0.9375} = 0.97
+	\end{aligned}
+$$
+
+\subsection{Worker Assignment ctd. ctd.}
+
+Calculate the variance of $W$.
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		V[W] & = E[(W - \mu)^2] = \sum_w (w-\mu)^2p(w) \\
+		& = (0 - 1)^2 \cdot \frac{1}{5} + (1 - 1)^2 \cdot \frac{3}{5} + (2 - 1)^2 \cdot \frac{1}{5} \\
+		& = 1 \cdot \frac{1}{5} + 0 \cdot \frac{3}{5} + 1 \cdot \frac{1}{5} \\
+		& = \frac{2}{5} = \sigma^2 \\
+		\sigma & = \sqrt{\frac{2}{5}}
+	\end{aligned}
+$$
+
 \end{document}
