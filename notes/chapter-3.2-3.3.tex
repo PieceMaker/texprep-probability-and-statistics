@@ -178,14 +178,14 @@ $$
 	\begin{aligned}
 		E[Y] & = \sum_y yp(y) \\
 		& = 0 \cdot p(0) + 1 \cdot p(1) + 2 \cdot p(2) + 3 \cdot p(3) \\
-		& = 0 \cdot \frac{4}{19600} + 1 \cdot \frac{276}{19600} + 2 \cdot \frac{4140}{19600} + 3 \cdot \frac{15180}{19600} \\
-		& = \frac{0 + 276 + 8280 + 45540}{19600} \\
-		& = \frac{54096}{19600} \\
-		& = 2.76
+		& = 0 \cdot \frac{15180}{19600} + 1 \cdot \frac{4140}{19600} + 2 \cdot \frac{276}{19600} + 3 \cdot \frac{4}{19600} \\
+		& = \frac{0 + 4140 + 552 + 12}{19600} \\
+		& = \frac{4704}{19600} \\
+		& = 0.24
 	\end{aligned}
 $$
 
-This is interpreted as 2.76 organizers are expected to win the raffle.
+This is interpreted as 0.24 organizers are expected to win the raffle.
 
 \begin{note}
 	Ask them what they notice about the expected value calculation. Guide them to showing that it's the weighted average. It's the mean of the given random variable.
@@ -224,12 +224,12 @@ Use the probability distribution calculated in the raffle ticket example to dete
 
 $$
 	\begin{aligned}
-		E[Y] & = \sum_y yp(y) \\
+		E[Y^2] & = \sum_y yp(y) \\
 		& = 0 \cdot p(0) + 1 \cdot p(1) + 4 \cdot p(2) + 9 \cdot p(3) \\
-		& = 0 \cdot \frac{4}{19600} + 1 \cdot \frac{276}{19600} + 4 \cdot \frac{4140}{19600} + 9 \cdot \frac{15180}{19600} \\
-		& = \frac{0 + 276 + 16560 + 136620}{19600} \\
-		& = \frac{153456}{19600} \\
-		& = 7.829388
+		& = 0 \cdot \frac{15180}{19600} + 1 \cdot \frac{4140}{19600} + 4 \cdot \frac{276}{19600} + 9 \cdot \frac{4}{19600} \\
+		& = \frac{0 + 4140 + 1104 + 36}{19600} \\
+		& = \frac{5280}{19600} \\
+		& = 0.2693878
 	\end{aligned}
 $$
 
@@ -289,6 +289,81 @@ $$
 		& = \frac{2}{5} = \sigma^2 \\
 		\sigma & = \sqrt{\frac{2}{5}}
 	\end{aligned}
+$$
+
+\subsection{Raffle Ticket ctd. ctd.}
+
+Use the probability distribution calculated in the raffle ticket example to determine $V[Y]$.
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		V[Y] & = E[(Y - \mu)]^2 = E[(Y - \mu)]^2 = \sum_y (y-\mu)^2p(y) \\
+		& = (0-0.24)^2 \cdot p(0) + (1-0.24)^2 \cdot p(1) + (2-0.24)^2 \cdot p(2) + (3-0.24)^2 \cdot p(3) \\
+		& = 0.0576 \cdot \frac{15180}{19600} + 0.5776 \cdot \frac{4140}{19600} + 3.0976 \cdot \frac{276}{19600} + 7.6176 \cdot \frac{4}{19600} \\
+		& = \frac{874.368 + 2391.264 + 854.9376 + 30.4704}{19600} \\
+		& = \frac{4151.04}{19600} \\
+		& = 0.2117878 = \sigma^2 \\
+		\sigma & = \sqrt{0.2117878} = 0.460204
+	\end{aligned}
+$$
+
+There are a couple more rules that should be mentioned when working with expected values.
+
+\begin{shaded}
+	Let Y be a discrete random variable with probability function $p(y)$ and $k$ be a constant. Then $E[c] = c$.	
+	\subsection*{Poof}
+		Let $g(y)=c$. Then
+		$$
+			\begin{aligned}
+				E[c] = \sum_y cp(y) & = cp(y_1) + cp(y_2) + cp(y_3) + \cdots \\
+				& = c(p(y_1) + p(y_2) + p(y_3) + \cdots) \\
+				& = c \sum_y p(y) = c
+			\end{aligned}
+		$$	
+\end{shaded}
+
+Similarly, $E[cg(Y)] = cE[g(Y)]$.
+
+\begin{shaded}
+	Let $Y$ be a discrete random variable and $g_1(Y), g_2(Y), \ldots, g_k(Y)$ be $k$ functions of $Y$. Then
+	$$
+		E[g_1(Y) + \cdots + g_k(Y)] = E[g_1(Y)] + \cdots + E[g_k(Y)]
+	$$
+\end{shaded}
+
+Let us now combine these results to find a simpler formula for calculating the variance.
+
+$$
+	\begin{aligned}
+		V[Y] & = \sigma^2 = E[(Y-\mu)^2] = E[Y^2-2\mu Y+\mu^2] \\
+		& = E[Y^2] - E[2\mu Y] + E[\mu^2] \\
+		& = E[Y^2] - 2\mu E[Y] + \mu^2 \\
+		& = E[Y^2] - 2\mu^2 + \mu^2 \\
+		& = E[Y^2] - \mu^2 \\
+		& = E[Y^2] - (E[Y])^2
+	\end{aligned}
+$$
+
+\subsection{Worker Assignment}
+
+We calculated earlier $E[W]=1$, $E[W^2]=\frac{7}{5}$, and $V[W]=\frac{2}{5}$. Now let's calculate $V[W]$ using the new formula.
+
+\subsubsection*{Solution}
+
+$$
+	V[W] = E[W^2] - (E[W])^2 = \frac{7}{5} - 1 = \frac{7-5}{5} = \frac{2}{5}
+$$
+
+\subsection{Raffle Ticket}
+
+Earlier we calculated $E[Y] = 0.24$, $E[Y^2] = 0.2693878$, and $V[Y]=0.2117878$. Now let's calculate $V[W]$ using the new formula.
+
+\subsubsection*{Solution}
+
+$$
+	V[Y] = E[Y^2] - (E[Y])^2 = 0.2693878 - (0.24)^2 = 0.2117878
 $$
 
 \end{document}
