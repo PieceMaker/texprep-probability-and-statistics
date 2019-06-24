@@ -366,4 +366,48 @@ $$
 	V[Y] = E[Y^2] - (E[Y])^2 = 0.2693878 - (0.24)^2 = 0.2117878
 $$
 
+\subsection{Machine Cost}
+
+The manager of an industrial plant is planning to buy a new machine of either type $A$ or type $B$. If $t$ denotes the number of hours of daily operation, the number of daily repairs $Y_A$ required to maintain machine $A$ is a random variable with mean and variance $0.1t$. The number of daily repairs $Y_B$ for machine $B$ is a random variable with mean $0.12t$.
+
+The daily cost of operating $A$ is $C_A(t)=10t+30Y_A^2$. For $B$ it is $C_B(t)=8t+30Y_B^2$. Which machine minimizes the expected daily cost if a workday consists of (a) 10 hours and (b) 20 hours.
+
+\subsubsection*{Solution}
+
+The expected daily cost for $A$ is
+
+$$
+	\begin{aligned}
+		E[C_A(t)] & = E[10t + 30Y_A^2] = 10t + 30E[Y_A^2] \\
+		& = 10t + 30[V[Y_A] + [E[Y_A]^2] = 10t + 30[0.1t + (0.1t)^2] \\
+		& = 13t + 0.3t^2
+	\end{aligned}
+$$
+
+$$
+	\begin{aligned}
+		E[C_B(t)] & = E[8t + 30Y_B^2] = 8t + 30E[Y_B^2] \\
+		& =8t + 30[V[Y_B] + [E[Y_B]^2] = 8t + 30[0.12t + (0.12t)^2] \\
+		& = 11.6t + 0.432t^2
+	\end{aligned}
+$$
+
+\subsection{Insurance Premium}
+
+An insurance company issues a one-year \$1,000 policy insuring against an occurrence $A$ that happens to 2 out of every 100 owners of the policy. Administrative fees are \$15 per policy and are not part of the company's "profit." How much should the company charge for the policy if it requires that the expected profit per policy is \$50?
+
+\subsubsection*{Solution}
+
+Let $C$ be the premium for the policy. Then the company's "profit" is $C-15$ if $A$ does not occur and $C-15-1000$ if $A$ occurs. Since $A$ happens to 2 out of every 100 policies, we can infer $P(A)=0.02$. Therefore
+
+$$
+	\begin{aligned}
+		E[\text{Profit}] & = (C - 15 - 1000) \cdot P(A) + (C - 15) \cdot P(A^\complement) \\
+		& = (C - 15 - 1000) \cdot 0.02 + (C - 15) \cdot 0.98 \\
+		& = C - 15 - 20 = C - 35
+	\end{aligned}
+$$
+
+We want the expected profit to be \$50 so we set $C - 35 = 50$. Solving for $C$ finds $C = 85$. Therefore, we should charge \$85 premium per policy.
+
 \end{document}
