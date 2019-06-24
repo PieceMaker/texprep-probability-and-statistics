@@ -1,0 +1,76 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Chapter 3.2-3.3}\\
+{\large Probability \& Statistics}
+\end{center}
+
+\section{Binomial Distribution}
+
+Last week we learned about probability distributions and how they summarize the probabilities of all possible values of the random variable being studied. In most cases, it can be very expensive, if not impossible, to construct the probability distribution for a random variable.
+
+One of the probability distributions we talked about was functional distributions, i.e. a function that defines the probability for each observable value. As long as it satisfies the three laws of probability, any function can define a probability distribution. Once a distribution has been defined, it can be analyzed and properties inferred. These properties can be used to determine what type of data the distribution is good at modeling.
+
+The first functional distribution we will define is known as the Binomial Distribution. The function is defined as
+
+$$
+	p(y) = {n \choose y} p^y q^{n-y}, \; y = 0,1,2,\ldots,n \; \text{and} \; 0 \leq p \leq 1, \; q = 1-p
+$$
+
+First, we notice that every probability is greater than or equal to 0. This satisfies the first rule of probability. For the second rule, let's take a look back to the binomial expansion we looked at before the test. As a review, the binomial expansion is
+
+$$
+	(x + y)^n = {n \choose 0} x^n y^0 + {n \choose 1} x^{n-1}y^1 + {n \choose 2} x^{n-2}y^2 + \cdots + {n \choose n} x^0 y^n = \sum_{i=0}^n {n \choose i} x^{n-i}y^i
+$$
+
+Notice the relation with the Binomial Distribution function we defined and this binomial expansion. What if we set $x=p$ and $y=q=1-p$? Then we have
+
+$$
+	(p + q)^n = {n \choose 0} p^n q^0 + {n \choose 1} p^{n-1}q^1 + {n \choose 2} p^{n-2}q^2 + \cdots + {n \choose n} p^0 q^n = \sum_{i=0}^n {n \choose i} p^{n-i}q^i
+$$
+
+But since $q = 1-p$, then this equals
+
+$$
+	(p + q)^n = (p + 1 - p)^n = 1^n = 1
+$$
+
+By this, we know that the binomial distribution function satisfies the second rule of probability
+\end{document}
