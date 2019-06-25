@@ -48,7 +48,28 @@ Last week we learned about probability distributions and how they summarize the 
 
 One of the probability distributions we talked about was functional distributions, i.e. a function that defines the probability for each observable value. As long as it satisfies the three laws of probability, any function can define a probability distribution. Once a distribution has been defined, it can be analyzed and properties inferred. These properties can be used to determine what type of data the distribution is good at modeling.
 
-The first functional distribution we will define is known as the Binomial Distribution. The function is defined as
+The first functional distribution we will define is known as the Binomial Distribution. It is used to model \textit{binomial experiments}.
+
+\begin{shaded}
+	A \textit{binomial experiment} posses the following properties:
+	\begin{enumerate}
+		\item The experiment consists of a fixed number, $n$, of identical trials.
+		\item Each trial results in one of two outcomes: success, $S$, or failure, $F$.
+		\begin{enumerate}
+			\item Flipping a coin.
+			\item Each manufactured item is either defective or non-defective.
+			\item Each shot at a shooting range is either a hit or a miss.
+			\item Each insurance policy either has a loss or it does not.
+		\end{enumerate}
+		\item The probability of success on a single trial is equal to some value $p$ and remains the same from trial to trial. The probability of a failure is equal to $q = (1-p)$.
+		\item The trials are independent, i.e. once an observation is made it does not change the likelihood of the results of the remaining experiments.
+		\item The random variable of interest is $Y$, the number of successes observed during the $n$ trials.
+	\end{enumerate}
+\end{shaded}
+
+A sample point from a binomial experiment measuring defective and non-defective engines (out of a total of 5 engines) at a factory might look like the following, where defective is a success $S$ and non-defective is a failure $F$ (success doesn't have to be a positive, just what we define it to be): $SFFSF$. In this case $Y=2$. It could look like $FFSFF$, with $Y=1$. It could also be $FFFFF$, with $Y=0$. We could also have all successes $SSSSS$, $Y=5$. Notice that the sample point $FFFSS$ also results in $Y=2$.
+
+We now define the probability function for the Binomial Distribution as
 
 $$
 	p(y) = {n \choose y} p^y q^{n-y}, \; y = 0,1,2,\ldots,n \; \text{and} \; 0 \leq p \leq 1, \; q = 1-p
@@ -60,17 +81,35 @@ $$
 	(x + y)^n = {n \choose 0} x^n y^0 + {n \choose 1} x^{n-1}y^1 + {n \choose 2} x^{n-2}y^2 + \cdots + {n \choose n} x^0 y^n = \sum_{i=0}^n {n \choose i} x^{n-i}y^i
 $$
 
-Notice the relation with the Binomial Distribution function we defined and this binomial expansion. What if we set $x=p$ and $y=q=1-p$? Then we have
+Notice the relation with the Binomial Distribution function we defined and this binomial expansion. What if we set $x=q=1-p$ and $y=p$? Then we have
 
 $$
-	(p + q)^n = {n \choose 0} p^n q^0 + {n \choose 1} p^{n-1}q^1 + {n \choose 2} p^{n-2}q^2 + \cdots + {n \choose n} p^0 q^n = \sum_{i=0}^n {n \choose i} p^{n-i}q^i
+	(q + p)^n = {n \choose 0} q^n p^0 + {n \choose 1} q^{n-1}p^1 + {n \choose 2} q^{n-2}p^2 + \cdots + {n \choose n} q^0 p^n = \sum_{i=0}^n {n \choose i} q^{n-i}p^i
 $$
 
 But since $q = 1-p$, then this equals
 
 $$
-	(p + q)^n = (p + 1 - p)^n = 1^n = 1
+	(q + p)^n = (1 - p + p)^n = 1^n = 1
 $$
 
-By this, we know that the binomial distribution function satisfies the second rule of probability
+By this, we know that the binomial distribution function satisfies the second rule of probability.
+
+\subsection{Electrical Fuses}
+
+Suppose that a lot of 5000 electrical fuses contains 5\% defectives. If a sample of 5 fuses is tested, find the probability of observing at least one defective.
+
+\subsubsection*{Solution}
+
+It is reasonable to assume that $Y$, the number of defectives observed, has an approximate binomial distribution because the lot is large. Removing a few fuses does not change the composition of those remaining enough to cause us concern. Thus,
+
+$$
+	\begin{aligned}
+		P(\text{at least one defective}) & = 1 - p(0) = 1 - {5 \choose 0} p^0q^5 \\
+		& = 1 - (0.95)^5 = 1 - 0.774 = 0.226
+	\end{aligned}
+$$
+
+Notice that there is a fairly large chance of seeing at least one defective, even though the sample is quite small.
+
 \end{document}
