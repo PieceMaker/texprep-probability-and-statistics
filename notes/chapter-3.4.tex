@@ -112,4 +112,91 @@ $$
 
 Notice that there is a fairly large chance of seeing at least one defective, even though the sample is quite small.
 
+\subsection{Electrical Fuses pt. 2}
+
+Refer to the previous problem. What is the probability of observing at least one defective if the lot of fuses contains 25\% defectives?
+
+\subsubsection*{Solution}
+
+$$
+	\begin{aligned}
+		P(\text{at least one defective}) & = 1 - p(0) = 1 - {5 \choose 0} p^0q^5 \\
+		& = 1 - (0.75)^5 = 1 - 0.2373047 = 0.7626953
+	\end{aligned}
+$$
+
+\subsection{Identify Binomial Experiments}
+
+In 2003, the average combined SAT score (math and verbal) for college-bound students in the US was 1026. Suppose that approximately 45\% of all high school graduates took this test and that 100 high school graduates are randomly selected from among all high school grads in the US. Which of the following random variables has a distribution that can be approximated by a binomial distribution?
+
+\begin{enumerate}[label=\alph*)]
+	\item The number of students who took the SAT
+	\item The scores of the 100 students in the sample
+	\item The number of students in the sample who scored above the average on the SAT
+	\item The amount of time required by each student to complete the SAT
+	\item The number of female high school grads in the sample
+\end{enumerate}
+
+Once a probability distribution has been defined, we have everything we need to calculate expected values. Therefore we can calculate $E[Y]$ and $V[Y]$. We will show how to calculate $E[Y]$.
+
+\begin{shaded}
+	$$
+		\begin{aligned}
+			E[Y] & = \sum_y yp(y) = \sum_{y=0}^n y {n \choose y} p^y q^{n-y} \\
+			& = \sum_{n=1}^n y \frac{n!}{(n-y)!y!} p^y q^{n-y} \\
+			& = \sum_{y=1}^n \frac{n!}{(n-y)!(y-1)!} p^y q^{n-y} \;\;\; \text{(Cancel y in y!)}
+		\end{aligned}
+	$$
+	$$
+		\begin{aligned}
+			& = np \sum_{y=1}^n \frac{(n-1)!}{(n-y)!(y-1)!} p^{y-1}q^{n-y} \;\;\; \text{(Factor out np)} \\
+			& = np \sum_{y=0}^{n-1} \frac{(n-1)!}{(n-1-z)!z!} p^z q^{n-1-z} \;\;\; \text{(Substitute z = y-1)} \\
+			& = np \sum_{z=0}^{n-1} {n-1 \choose z} p^z q^{n-1-z}
+		\end{aligned}
+	$$
+	\newpage
+	Notice that this summation is the sum of a binomial distribution with $n-1$ trials. Because of this, it sums to 1 and we now have
+	$$
+		E[Y] = np
+	$$
+	Using similar methods, we can calculate
+	$$
+		V[Y] = npq = np(1-p)
+	$$
+\end{shaded}
+
+\begin{note}
+	Talk to the students about the interpretation of $E[Y]$.
+\end{note}
+
+\subsection{Electrical Fuses Expected Values}
+
+For the electrical fuse example, calculate $E[Y]$ and $V[Y]$ if
+
+\begin{enumerate}[label=\alph*)]
+	\item 5\% of the lot are defective
+	\item 25\% of the lot are defective
+\end{enumerate}
+
+\subsubsection*{Solution}
+
+\begin{enumerate}[label=\alph*)]
+	\item
+		$$
+			\begin{aligned}
+				E[Y] & = np = 5 \cdot 0.05 = 0.25 \\
+				V[Y] & = npq = np(1-p) = 5 \cdot 0.05 \cdot 0.95 = 0.2375
+			\end{aligned}
+		$$
+	\item
+		$$
+			\begin{aligned}
+				E[Y] & = np = 5 \cdot 0.25 = 1.25 \\
+				V[Y] & = npq = np(1-p) = 5 \cdot 0.25 \cdot 0.75 = 0.9375
+			\end{aligned}
+		$$
+\end{enumerate}
+
+
+
 \end{document}
