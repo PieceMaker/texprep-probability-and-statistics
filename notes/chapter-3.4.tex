@@ -197,6 +197,45 @@ For the electrical fuse example, calculate $E[Y]$ and $V[Y]$ if
 		$$
 \end{enumerate}
 
+\subsection{System Robustness}
 
+A complex electronic system is built with a certain number of backup components in its subsystems. One subsystem has four identical components, each with a probability of 0.2 of failing in less than 1000 hours. The subsystem will operate if any two of the four components are operating. Assume that the components operate independently. Find the probability that
+
+\begin{enumerate}[label=\alph*)]
+	\item exactly two of the four components last longer than 1000 hours.
+	\item the subsystem operates longer than 1000 hours.
+\end{enumerate}
+
+\subsubsection*{Solution}
+
+Define a success as a component lasts longer than 1000 hours. The the probability of success is $p=0.8$. Additionally, we are observing 4 components so we have $n=4$. If $Y$ represents the number of components operating longer than 1000 hours, then $Y \sim \text{Binomial}(4, 0.8)$.
+
+\begin{enumerate}[label=\alph*)]
+	\item Since we are interested in exactly two lasting longer than 1000 hours, we are interested in 2 successes, or $P(Y=2)$. This is calculated as
+	$$
+		P(Y=2) = p(2) = {4 \choose 2} 0.8^20.2^2 = 6 \cdot 0.64 \cdot 0.04 = 0.1536
+	$$
+	\item We want $P(Y \geq 2)$.
+	$$
+		\begin{aligned}
+			P(Y \geq 2) & = p(2) + p(3) + p(4) = 1 - p(0) - p(1) \\
+			& = 1 - {4 \choose 0}0.8^00.2^4 - {4 \choose 1}0.8^10.2^3 \\
+			& = 1 - 1 \cdot 1 \cdot 0.0016 - 4 \cdot 0.8 \cdot 0.008 \\
+			& = 0.9728
+		\end{aligned}
+	$$
+\end{enumerate}
+
+\noindent What if we were interested if the system would survive, on the average.
+
+$$
+	E[Y] = np = 4 \cdot 0.8 = 3.2
+$$
+
+\noindent Yes, on the average 3.2 subsystems will make it past 1000 hours so on the average the system will survive longer than 1000 hours.
+
+\begin{note}
+	Make a connection to the hour rating of light bulbs, or statistical tolerances of buildings and other structures.
+\end{note}
 
 \end{document}
