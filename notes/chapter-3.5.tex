@@ -65,4 +65,19 @@ $$
 	$$
 \end{shaded}
 
+Clearly this distribution satisfies the first probability rule. What about the second?
+
+$$
+	\begin{aligned}
+		\sum_{y=1}^\infty p(y) & = \sum_{y=1}^\infty q^{y-1}p = p \sum_{y=1}^\infty q^{y-1} \\
+		& = p \sum_{z=0}^\infty q^z = \frac{p}{1-q} = \frac{p}{1-(1-p)} = 1
+	\end{aligned}
+$$
+
+This last equality holds because we know the following sum:
+
+$$
+	\sum_{z=0}^\infty r^z = \frac{1}{1-r}, \;\;\; |r| < 1
+$$
+
 \end{document}
