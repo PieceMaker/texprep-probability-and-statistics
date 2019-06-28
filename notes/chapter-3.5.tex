@@ -80,4 +80,33 @@ $$
 	\sum_{z=0}^\infty r^z = \frac{1}{1-r}, \;\;\; |r| < 1
 $$
 
+For a geometric random variable, we have the following:
+
+$$
+	\begin{aligned}
+		E[Y] & = \frac{1}{p} \\
+		V[Y] & = \frac{1-p}{p^2}
+	\end{aligned}
+$$
+
+\subsection{Engine Survival}
+
+Suppose that the probability of an engine malfunction during any one-hour period is $p=0.05$. Find the probability that a given engine will survive 3 hours. Additionally, calculate $E[Y]$ and $V[Y]$.
+
+\subsubsection*{Solution}
+
+Letting $Y$ denote the number of one-hour intervals until the first malfunction, we have
+
+$$
+	\begin{aligned}
+		P(\text{survive 3 hours}) & = P(Y \geq 4) = \sum_{y=4}^\infty p(y) \\
+		& = 1 - \sum_{y=1}^3 p(y) \\
+		& = 1 - p - qp - q^2p \\
+		& = 1 - 0.05 - 0.95 \cdot 0.05 - 0.95^2 \cdot 0.05 \\
+		& = 0.857375 \\
+		E[Y] & = \frac{1}{p} = \frac{1}{0.05} = 20 \\
+		V[Y] & = \frac{1-p}{p^2} = \frac{0.95}{0.0025} = 380
+	\end{aligned}
+$$
+
 \end{document}
