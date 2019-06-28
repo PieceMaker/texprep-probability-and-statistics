@@ -1,0 +1,114 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Test 2 Questions} \\
+{\large Probability \& Statistics} \\
+\end{center}
+\section*{Question 1}
+
+Let $Y$ be a random variable with distribution $p(y)$ given in the following table:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		y & $p(y)$ \\
+		\hline
+		1 & 0.15 \\
+		2 & 0.25 \\
+		3 & 0.55 \\
+		4 & 0.05 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent Calculate $E[Y]$, $E[5Y]$, $E[2Y+2]$, $E\left[ \frac{1}{Y} \right]$, and $V[Y]$. Use any valid method to calculate $V[Y]$.
+
+\section*{Question 2}
+
+You are given
+
+$$
+	\begin{aligned}
+		E[Y] & = 11 \\
+		E[Y^2] & = 153 \\
+		E[Y^3] & = 1926
+	\end{aligned}
+$$
+
+\noindent Calculate the following:
+
+\begin{enumerate}
+	\item $E[2Y - 3Y^2 + 5Y^3]$
+	\item $V[Y]$
+\end{enumerate}
+
+\section*{Question 3}
+
+A potential customer for an \$85,000 fire insurance policy possesses a home in an area that, according to experience, may sustain a total (100\%) loss in a given year with probability 0.001 and a 50\% loss with probability 0.01. Assuming these are the only losses the policy can sustain, show that the premium that must be charged on all \$85,000 policies in this area is \$510.
+
+\section*{Question 4}
+
+Show that the binomial distribution satisfies the second law of probability, i.e. show that the sum of all probabilities of the binomial distribution sums to 1.
+
+\section*{Question 5}
+
+A fire-detection device utilizes four temperature-sensitive cells acting independently of each other in such a manner that any one or more may activate the alarm. Each cell has a probability of 0.9 of activating the alarm when the temperature reaches $100^\circ$ Celsius or more. Let $Y$ equal the number of cells activating the alarm when the temperature reaches $100^\circ$ Celsius.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is the probability that the alarm will function when the temperature reaches $100^\circ$ Celsius?
+	\item Calculate $E[Y]$ and $V[Y]$.
+\end{enumerate}
+
+\section*{Question 6}
+
+A certified public accountant (CPA) has found that 7 of 10 company audits contain substantial errors. If the CPA audits a series of company accounts, let $Y$ equal the audit number of the first company that has substantial errors.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is the probability of success?
+	\item What is the probability that the first company account containing substantial errors is the fourth one to be audited?
+	\item What is the probability that the first company account to contain substantial errors will occur on or after the fourth audited account?
+\end{enumerate}
+
+\end{document}
