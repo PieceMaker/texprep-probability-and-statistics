@@ -1,0 +1,228 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Test 2} \\
+{\large Probability \& Statistics} \\
+{\large Show all work. Write all answers on exam. Use back of page when necessary. } \\
+\end{center}
+\section*{Question 1 (20 pts.)}
+
+Let $Y$ be a random variable with distribution $p(y)$ given in the following table:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		y & $p(y)$ \\
+		\hline
+		1 & 0.4 \\
+		2 & 0.3 \\
+		3 & 0.2 \\
+		4 & 0.1 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent Calculate $E[Y]$, $E[5Y+2]$, $E\left[ Y^2 \right]$, and $V[Y]$. Use any valid method to calculate $V[Y]$.
+
+\section*{Solution}
+
+$$
+\begin{aligned}
+	E[Y] & = 1 \cdot 0.4 + 2 \cdot 0.3 + 3 \cdot 0.2 + 4 \cdot 0.1 = 0.4 + 0.6 + 0.6 + 0.4 = 2 \\
+	E[5Y+2] & = 5E[Y]+2 = 5\cdot2 +2 = 12 \\
+	E\left[ Y^2 \right] & = 1 \cdot 0.4 + 4 \cdot 0.3 + 9 \cdot 0.2 + 16 \cdot 0.1 = 0.4 + 1.2 + 1.8 + 1.6 = 5 \\
+	V[Y] & = E\left[ Y^2 \right] - \left( E[Y] \right)^2 = 5 - 4 = 1
+\end{aligned}
+$$
+
+\newpage
+
+\section*{Question 2 (20 pts.)}
+
+You are given
+
+$$
+	\begin{aligned}
+		E[Y] & = 11 \\
+		E[Y^2] & = 169 \\
+		E[Y^3] & = 2500
+	\end{aligned}
+$$
+
+\noindent Calculate the following:
+
+\begin{enumerate}
+	\item $E[2Y - 3Y^2 + 5Y^3]$
+	\item $V[Y]$
+\end{enumerate}
+
+\section*{Solution}
+
+$$
+	\begin{aligned}
+		E\left[ 2Y - 3Y^2 + 5Y^3 \right] & = 2E[Y] - 3E\left[ Y^2 \right] + 5 E\left[ Y^3 \right] \\
+		& = 2 \cdot 11 - 3 \cdot 169 + 5 \cdot 2500 \\
+		& = 22 - 507 + 12500 = 12015 \\
+		V[Y] & = E\left[ Y^2 \right] - \left( E[Y] \right)^2 \\
+		& = 169 - 121 = 48
+	\end{aligned}
+$$
+
+\newpage
+
+\section*{Question 3 (20 pts.)}
+
+A potential customer for an \$85,000 fire insurance policy possesses a home in an area that, according to experience, may sustain a total (100\%) loss in a given year with probability 0.005 and a 50\% loss with probability 0.05. Assuming these are the only losses the policy can sustain, show that the premium that must be charged on all \$85,000 policies in this area is \$2,550.
+
+\section*{Solution}
+
+Let $C$ be the premium.
+
+\[ \text{Income} = \begin{cases} 
+          C, & \text{no loss} \\
+			C - 42500, & \text{half loss} \\
+			C - 85000, & \text{full loss}
+       \end{cases}
+\]
+
+The solution is the premium that results in an expected income of 0.
+
+$$
+	\begin{aligned}
+		E[\text{Income}] & = C \cdot 0.945 + (C - 42500) \cdot 0.05 + (C - 85000) \cdot 0.005 \\
+		& = C - 2125 - 425 = C - 2550 = 0 \\
+		& \therefore C = 2550
+	\end{aligned}
+$$
+
+\newpage
+
+\section*{Question 4 (20 pts.)}
+
+Show that the binomial distribution satisfies the second law of probability, i.e. show that the sum of all probabilities of the binomial distribution sums to 1.
+
+\section*{Solution}
+
+$$
+	p(y) = {n \choose y} p^y q^{n-y}, \; y = 0,1,2,\ldots,n \; \text{and} \; 0 \leq p \leq 1, \; q = 1-p
+$$
+
+$$
+	\begin{aligned}
+	\sum_{i=0}^n {n \choose i} q^{n-i}p^i & = {n \choose 0} q^n p^0 + {n \choose 1} q^{n-1}p^1 + {n \choose 2} q^{n-2}p^2 + \cdots + {n \choose n} q^0 p^n \\
+	& = (q + p)^n = (1 - p + p)^n = 1^n = 1
+	\end{aligned}
+$$
+
+\newpage
+
+\section*{Question 5 (20 pts.)}
+
+A fire-detection device utilizes three temperature-sensitive cells acting independently of each other in such a manner that any one or more may activate the alarm. Each cell has a probability of 0.8 of activating the alarm when the temperature reaches $100^\circ$ Celsius or more. Let $Y$ equal the number of cells activating the alarm when the temperature reaches $100^\circ$ Celsius.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is the probability that the alarm will function when the temperature reaches $100^\circ$ Celsius?
+	\item Calculate $E[Y]$ and $V[Y]$.
+\end{enumerate}
+
+\section*{Solution}
+
+\begin{enumerate}
+	\item This is a binomial experiment because there are a set number of trials, they are all independent, they have the same success probability, and there are only two outcomes. We are also interested in the total number of successes.
+	\item Let $Y$ be the number of cells triggering the alarm. Then the probability of success is $p=0.8$.
+	
+	$$
+		\begin{aligned}
+			P(\text{the alarm functions}) & = P(Y \geq 1) = 1 - P(Y=0) \\
+			& = 1 - {3 \choose 0} 0.8^0 0.2^3 = 1-0.2^3 \\
+			& = 0.992
+		\end{aligned}
+	$$
+	\item
+	$$
+		\begin{aligned}
+			E[Y] & = np = 3 \cdot 0.8 = 2.4 \\
+			V[Y] & = npq = 3 \cdot 0.8 \cdot 0.2 = 0.48
+		\end{aligned}
+	$$
+\end{enumerate}
+
+\newpage
+
+\section*{Question 6 (20 pts.)}
+
+A certified public accountant (CPA) has found that 4 of 10 company audits contain substantial errors. If the CPA audits a series of company accounts, let $Y$ equal the audit number of the first company that has substantial errors.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is a success? What is the probability of success?
+	\item What is the probability that the first company account containing substantial errors is the third one to be audited?
+	\item What is the probability that the first company account to contain substantial errors will occur on or after the third audited account?
+\end{enumerate}
+
+\section*{Solution}
+
+\begin{enumerate}
+	\item Geometric, because each trial is independent, has the same probability of success, only has two outcomes, and we want to know when the first success occurs.
+	\item A success is the company audit having substantial errors. The probability of success is $p = \frac{4}{10} = 0.4$.
+	\item
+	Let $Y$ be the number of the first audit containing substantial errors.
+		$$
+			\begin{aligned}
+				P(\text{first substantial errors are found on the third audit}) & = P(Y=3) = q^2 p \\
+				& = 0.6^2 \cdot 0.4 = 0.144
+			\end{aligned}
+		$$
+	\item
+		$$
+			\begin{aligned}
+				P(\text{first substantial errors are on or after the third audit}) & = P(Y\geq 3) = 1 - P(Y \leq 2) \\
+				& = 1 - P(Y = 1) - P(Y = 2) \\
+				& = 1 - p - qp \\
+				& = 1 - 0.4 - 0.6 \cdot 0.4 = 0.36
+			\end{aligned}
+		$$
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,125 @@
+% Template from https://www.overleaf.com/latex/templates/chapter-review-notes/npqqbrvfkwqh
+\documentclass[11pt]{article}
+\usepackage{gensymb}
+\usepackage[utf8]{inputenc}	
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{multirow,booktabs}
+\usepackage[table]{xcolor}
+\usepackage{fullpage}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{cancel}
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\newlength{\tabcont}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+\usepackage{empheq}
+\usepackage{framed}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\colorlet{shadecolor}{orange!15}
+\parindent 0in
+\parskip 12pt
+\geometry{margin=1in, headsep=0.25in}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{reg}{Rule}
+\newtheorem{exer}{Exercise}
+\newtheorem{note}{Note}
+\begin{document}
+\title{Title}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE \bf Test 2} \\
+{\large Probability \& Statistics} \\
+{\large Show all work. Write all answers on exam. Use back of page when necessary. } \\
+\end{center}
+\section*{Question 1 (20 pts.)}
+
+Let $Y$ be a random variable with distribution $p(y)$ given in the following table:
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lr}
+		\hline
+		y & $p(y)$ \\
+		\hline
+		1 & 0.4 \\
+		2 & 0.3 \\
+		3 & 0.2 \\
+		4 & 0.1 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent Calculate $E[Y]$, $E[5Y+2]$, $E\left[ Y^2 \right]$, and $V[Y]$. Use any valid method to calculate $V[Y]$.
+
+\newpage
+
+\section*{Question 2 (20 pts.)}
+
+You are given
+
+$$
+	\begin{aligned}
+		E[Y] & = 11 \\
+		E[Y^2] & = 169 \\
+		E[Y^3] & = 2500
+	\end{aligned}
+$$
+
+\noindent Calculate the following:
+
+\begin{enumerate}
+	\item $E[2Y - 3Y^2 + 5Y^3]$
+	\item $V[Y]$
+\end{enumerate}
+
+\newpage
+
+\section*{Question 3 (20 pts.)}
+
+A potential customer for an \$85,000 fire insurance policy possesses a home in an area that, according to experience, may sustain a total (100\%) loss in a given year with probability 0.005 and a 50\% loss with probability 0.05. Assuming these are the only losses the policy can sustain, show that the premium that must be charged on all \$85,000 policies in this area is \$2,550.
+
+\newpage
+
+\section*{Question 4 (20 pts.)}
+
+Show that the binomial distribution satisfies the second law of probability, i.e. show that the sum of all probabilities of the binomial distribution sums to 1.
+
+\newpage
+
+\section*{Question 5 (20 pts.)}
+
+A fire-detection device utilizes three temperature-sensitive cells acting independently of each other in such a manner that any one or more may activate the alarm. Each cell has a probability of 0.8 of activating the alarm when the temperature reaches $100^\circ$ Celsius or more. Let $Y$ equal the number of cells activating the alarm when the temperature reaches $100^\circ$ Celsius.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is the probability that the alarm will function when the temperature reaches $100^\circ$ Celsius?
+	\item Calculate $E[Y]$ and $V[Y]$.
+\end{enumerate}
+
+\newpage
+
+\section*{Question 6 (20 pts.)}
+
+A certified public accountant (CPA) has found that 4 of 10 company audits contain substantial errors. If the CPA audits a series of company accounts, let $Y$ equal the audit number of the first company that has substantial errors.
+
+\begin{enumerate}
+	\item What type of experiment is this? Why?
+	\item What is a success? What is the probability of success?
+	\item What is the probability that the first company account containing substantial errors is the third one to be audited?
+	\item What is the probability that the first company account to contain substantial errors will occur on or after the third audited account?
+\end{enumerate}
+
+\end{document}
