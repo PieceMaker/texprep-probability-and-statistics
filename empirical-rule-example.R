@@ -39,6 +39,6 @@ plotEmpiricalRule <- function(mu, sigma, n = 100, N = 1000000) {
     return(g)
 }
 
-plotEmpiricalRule(100, 20) # +
-    # xlim(25, 175) +
-    # ylim(0, 0.1)
+plotEmpiricalRule(100, 10) +
+    xlim(25, 175) +
+    ylim(0, 0.1)
